@@ -71,8 +71,8 @@ $\mathbb N$: here \hl{$\{1,2,3,\ldots\}$ (no 0!)}; $\mathbb Z=\{0,\pm1,\pm2,\ldo
 \hl{Arithmetic:} add = bitwise with carry ($1010_2+0111_2=10001_2=17$); multiply = shift-and-add ($1010_2{\times}11_2=11110_2=30$). Shifts: $x\ll k=x\cdot2^k$, $x\gg k=x\,\mathrm{div}\,2^k$ (integer only).
 
 \subsection{Dec$\leftrightarrow$Bin}
-\textbf{Int ($\div2$, remainders bottom-up):} $21_{10}=10101_2$; $33_{10}=100001_2$; $26_{10}=11010_2$; $205_{10}=11001101_2$. \textbf{Bin$\to$dec:} $1011_2=8+2+1=11$.
-\textbf{Frac ($\times2$, take integer part):} $0.6875\to0.1011_2$; $0.1_{10}=0.00011\ldots_2$ (\hl{periodic}); $0.1011_2=\frac12+\frac18+\frac1{16}=\frac{11}{16}=0.6875$.
+\textbf{Int ($\div2$, read remainders \hl{bottom-up}):} $21_{10}=10101_2$; $33_{10}=100001_2$; $26_{10}=11010_2$; $205_{10}=11001101_2$. \textbf{Bin$\to$dec:} $1011_2=8+2+1=11$.
+\textbf{Frac ($\times2$, take the \hl{integer part} each step):} $0.6875\to0.1011_2$; $0.1_{10}=0.00011\ldots_2$ (\hl{periodic}); $0.1011_2=\frac12+\frac18+\frac1{16}=\frac{11}{16}=0.6875$.
 \textbf{Mixed:} $21.09375=10101.00011_2$ ($0.09375=\frac1{16}+\frac1{32}=\frac3{32}$).
 
 \section{IEEE 754 Floats}
@@ -80,7 +80,7 @@ Normalized: $\textcolor{BrickRed}{(-1)^s(1.f)_2\,2^{e}}$, stored with bias: valu
 \hl{Convert dec$\to$float:} dec$\to$bin $\to$ normalize to $1.f\times2^e$ $\to$ store $s$, fraction bits (drop leading 1), $E=e+\mathrm{bias}$.
 \textbf{Worked:} $21.09375=1.010100011_2\times2^4$ $\Rightarrow s{=}0,\ f{=}010100011,\ e{=}4$; single-precision $E=4+127=131=10000011_2$.
 \hl{Bin$\to$dec:} sum $2^{-k}$ place values: $0.1011_2=0.6875$.
-\hl{Zero:} \hl{cannot} arise as $1.f\times2^e$ ($1.f\ne0$); IEEE reserves all-0 exponent bits for $+0,-0$. \hl{$\times$/$\div$ by 2} = exponent shift; $0.1+0.2$ gives rounding error.
+\hl{Zero:} \hl{cannot} arise as $1.f\times2^e$ ($1.f\ne0$); IEEE \hl{reserves all-0 exponent bits} for $+0,-0$. \hl{$\times$/$\div$ by 2} = exponent shift; $0.1+0.2$ gives rounding error.
 \begin{obox}\raggedright
 \textbf{Special bit patterns:} $\pm0$: exponent $=$ mantissa $=0$ (sign bit only); subnormal: exponent $=0$, mantissa $\ne0$; $\pm\infty$: exponent $=$ all 1s, mantissa $=0$; NaN: exponent $=$ all 1s, mantissa $\ne0$.
 \end{obox}
@@ -93,7 +93,7 @@ Division: $a=bq+r$, $0\le r<b$ ($q=a\,\mathrm{div}\,b$, $r=a\bmod b$).
 \hl{Fraction = pair $(p,q)$}, reduced: divide by $g=\gcd(p,q)$: $\frac{6}{12}\to(1,2)$; $\frac{125}{100}\to(5,4)$. Arithmetic: $\frac{p_1}{q_1}+\frac{p_2}{q_2}=(p_1q_2+p_2q_1,\ q_1q_2)$; product $=(p_1p_2,q_1q_2)$. \hl{Rational number} $\frac ab$ = pair with $\gcd(a,b)=1$; rationals are terminating or repeating decimals ($\frac13=0.(3)$, $\frac9{11}=0.(81)$); irrationals ($\sqrt2,\pi,e$) never repeat.
 
 \section{Arbitrary-Precision Integers (APN)}
-Fixed $n$ bits $\Rightarrow$ max $\approx 2^{n-1}$; to do exact big arithmetic, store number as a \hl{digit list in base $B$}, each entry $\in[0,B-1]$, least significant first:
+Fixed $n$ bits $\Rightarrow$ max $\approx 2^{n-1}$; to do exact big arithmetic, store number as a \hl{digit list in base $B$}, each entry $\in[0,B-1]$, \hl{least significant first}:
 $$x=d_0+d_1B+d_2B^2+\cdots\ \Longleftrightarrow\ [d_0,d_1,d_2,\ldots]$$
 $1{,}234{,}567{,}890$ with $B{=}10^3\Rightarrow[890,567,234,1]$. \hl{Addition:} elementwise with carry. $x{=}1{,}234{,}567$, $y{=}987{,}654$, $B{=}10^3$: $[567,234,1]+[654,987,0]$ $\Rightarrow 221,222,2$ $\Rightarrow 2{,}222{,}221$. \hl{List$\to$dec:} $\sum d_iB^i$; \hl{dec$\to$list:} repeated $\div B$. Complexity: add $O(n)$, schoolbook mult $O(n^2)$, FFT mult $O(n\log n)$.
 
@@ -123,12 +123,11 @@ $a\equiv b\pmod n \iff n\mid(a-b) \iff$ same remainder $\bmod n$. \hl{Residue cl
 \hl{Exponentiation:} $[7]_5^8=[2]^8=[256]=[1]$; $2^{10}\equiv4\pmod5$; $[26]_5+[17]_5=[43]_5=[3]_5$; $[7]_3\cdot[11]_3=[77]_3=[2]_3$.
 
 \subsection{Inverses \& Zero Divisors}
-\hl{Additive inverse} of $[a]$ is $[-a]$ (\hl{always exists}). \hl{Multiplicative inverse} $[a]^{-1}$ exists \hl{$\iff\gcd(a,n)=1$} (B\'ezout); in tables, $[1]$ appears in every nonzero row of $\times$-table $\iff n$ prime. \hl{Zero divisors:} $[a],[b]\ne[0]$ with $[a][b]=[0]$; exist $\iff n$ composite.
+\hl{Additive inverse} of $[a]$ is $[-a]$ (\hl{always exists}). \hl{Multiplicative inverse} $[a]^{-1}$ exists \hl{$\iff\gcd(a,n)=1$} (B\'ezout); in tables, \hl{row $a$ has a $1\iff a$ invertible}. \hl{Zero divisors:} $[a],[b]\ne[0]$ with $[a][b]=[0]$; exist $\iff n$ composite.
 \textbf{Mod 5} (prime): $1^{-1}=1,\ 2^{-1}=3,\ 3^{-1}=2,\ 4^{-1}=4$.
 \begin{center}\scriptsize
-$\begin{array}{c|cccc}\times&1&2&3&4\\\hline1&1&2&3&4\\2&2&4&1&3\\3&3&1&4&2\\4&4&3&2&1\end{array}$
-\quad
-$\begin{array}{c|ccc}\times&1&2&3\\\hline1&1&2&3\\2&2&0&2\\3&3&2&1\end{array}$
+\textit{mod 5:}\,$\begin{array}{c|cccc}\times&1&2&3&4\\\hline1&1&2&3&4\\2&2&4&1&3\\3&3&1&4&2\\4&4&3&2&1\end{array}$\quad
+\textit{mod 4:}\,$\begin{array}{c|ccc}\times&1&2&3\\\hline1&1&2&3\\2&2&0&2\\3&3&2&1\end{array}$
 \end{center}
 \textbf{Mod 4} (composite): $2^{-1}$ \hl{does not exist}; $[2]_4[2]_4=[0]_4$ (zero divisor, row 2 lacks 1).
 
@@ -177,7 +176,7 @@ Derives from Lagrange on $\mathbb Z_p^*$ ($|\mathbb Z_p^*|=p-1$).
 \textbf{Dec$\to$bin (unsigned):} repeatedly $\div2$, write quotient $q$ and remainder $r$; continue until $q{=}0$; read remainders \hl{bottom-up}.\\
 $45$: $45{=}2{\cdot}22{+}1$, $22{=}2{\cdot}11{+}0$, $11{=}2{\cdot}5{+}1$, $5{=}2{\cdot}2{+}1$, $2{=}2{\cdot}1{+}0$, $1{=}2{\cdot}0{+}1\Rightarrow101101_2$.\\
 \hl{Check:} $32{+}8{+}4{+}1{=}45$. \textbf{Bin$\to$dec:} sum place values $111001_2{=}32{+}16{+}8{+}1{=}57$.\\
-\textbf{Signed dec$\to$bin:} (1) write $|m|$ in $n$ bits (2) flip bits (3) $+1$. $-37$ (8-bit): $00100101\to11011010\to11011011$.\\
+\textbf{Signed dec$\to$bin:} (1) write $|m|$ in $n$ bits (2) \hl{flip bits} (3) $+1$. $-37$ (8-bit): $00100101\to11011010\to11011011$.\\
 \hl{Check:} $11011011$ as unsigned $=219$; $219{-}256{=}{-}37$. \textbf{Bin$\to$dec:} MSB $1\Rightarrow$ negate: $10110001\to01001110\to01001111{=}79\Rightarrow-79$.\\
 \textbf{Add (carry):} $10110{+}01111{=}100101$ ($22{+}15{=}37$). \textbf{Mult (shift\&add):} $1101{\times}101{=}1101{+}110100{=}1000001$ ($13{\times}5{=}65$).\\
 \textbf{Shift} $=$ multiply/divide by 2: $100110\gg1{=}10011$ ($38\to19$).
@@ -295,14 +294,14 @@ Mod 10: units $\{1,3,7,9\}$; $3^{-1}{=}7$ ($3{\cdot}7{=}21\equiv1$); zero diviso
 
 \subsection{20--21. Groups: axioms \& multiplication tables}
 \begin{sloppypar}\raggedright
-\textbf{Verify ALL 4 axioms} (closure is the forgotten one). $(\mathbb Z_4,{+})$: closure ($[a]{+}[b]{=}[a{+}b]\in\mathbb Z_4$), identity $[0]$, inverse $[a]{+}[-a]{=}[0]$ (e.g. $[1]{+}[3]{=}[0]$, $[2]{+}[2]{=}[0]$), associative (integers) $\Rightarrow$ group.\\
+\hl{Verify ALL 4 axioms} (closure is the forgotten one). $(\mathbb Z_4,{+})$: closure ($[a]{+}[b]{=}[a{+}b]\in\mathbb Z_4$), identity $[0]$, inverse $[a]{+}[-a]{=}[0]$ (e.g. $[1]{+}[3]{=}[0]$, $[2]{+}[2]{=}[0]$), associative (integers) $\Rightarrow$ group.\\
 $\mathbb Z_3^*{=}\{1,2\}$ table: $2{\cdot}2{=}4\equiv1$ $\Rightarrow$ rows $\{1,2\},\{2,1\}$; $1^{-1}{=}1$, $2^{-1}{=}2$; order-2 group.\\
 $\mathbb Z_4^*{=}\{1,3\}$: $3{\cdot}3{=}9\equiv1$ $\Rightarrow$ group. $\{1,2,3\}$ with $\times$ mod 4 is \emph{not}: $2{\cdot}2{=}0\notin$ set (closure fails).
 \end{sloppypar}
 
 \subsection{22--23. Order, generator, Lagrange}
 \begin{sloppypar}\raggedright
-\textbf{Order:} smallest $n{>}0$ with $g^n{=}e$. Compute powers until $e$: in $\mathbb Z_7^*$: $2^1{=}2$, $2^2{=}4$, $2^3{=}8\equiv1$ $\Rightarrow\mathrm{ord}(2){=}3$.\\
+\textbf{Order:} smallest $n{>}0$ with $g^n{=}e$. \hl{Compute powers until $e$}: in $\mathbb Z_7^*$: $2^1{=}2$, $2^2{=}4$, $2^3{=}8\equiv1$ $\Rightarrow\mathrm{ord}(2){=}3$.\\
 \textbf{Generator} $\iff\mathrm{ord}(g){=}|G|$: $3$: powers $3,2,6,4,5,1$ (6 distinct) $\Rightarrow$ generator of $\mathbb Z_7^*$.\\
 $\mathbb Z_{11}^*$ ($|G|{=}10$): $2$: $2,4,8,5,10,9,7,3,6,1\Rightarrow\mathrm{ord}{=}10\Rightarrow$ generator; $3$: $3,9,5,4,1\Rightarrow\mathrm{ord}{=}5$.\\
 \textbf{Lagrange:} order divides $|G|$: $|\mathbb Z_{12}^*|{=}\varphi(12){=}4\Rightarrow$ orders $\in\{1,2,4\}$; $\varphi(9){=}6\Rightarrow\{1,2,3,6\}$.
@@ -310,7 +309,7 @@ $\mathbb Z_{11}^*$ ($|G|{=}10$): $2$: $2,4,8,5,10,9,7,3,6,1\Rightarrow\mathrm{or
 
 \subsection{24. Fermat big powers}
 \begin{sloppypar}\raggedright
-\textbf{Method:} (1) check $p$ prime and $\gcd(a,p){=}1$; (2) $a^{p-1}\equiv1\pmod p$; (3) reduce base mod $p$; (4) $a^{(p-1)q{+}c}\equiv a^c$.\\
+\textbf{Method:} (1) check $p$ prime and $\gcd(a,p){=}1$; (2) $a^{p-1}\equiv1\pmod p$; (3) \hl{reduce base mod $p$}; (4) $a^{(p-1)q{+}c}\equiv a^c$.\\
 $3^{100}\bmod7$: $7$ prime, $7\nmid3$; $3^6\equiv1$; $100{=}6{\cdot}16{+}4$; $3^{100}\equiv3^4{=}81\equiv4$.\\
 $5^{100}\bmod13$: $5^{12}\equiv1$; $100{=}12{\cdot}8{+}4$; $5^4{=}625\equiv1$. $2^{1000}\bmod7$: $1000{=}6{\cdot}166{+}4$; $2^4{=}16\equiv2$.
 \end{sloppypar}
@@ -344,7 +343,7 @@ Rule $c_1v^2{+}c_2v^2\to(c_1{+}c_2)v^2$: $2x^2{+}3x^2\to5x^2$; $2x^2{+}3y^2$ no 
 
 \subsection{29. Solving simple linear congruences}
 \begin{sloppypar}\raggedright
-\textbf{Solve $ax\equiv b\pmod n$:} if $\gcd(a,n)\nmid b$ no solution; divide all three by $\gcd$; multiply by $a^{-1}$.\\
+\textbf{Solve $ax\equiv b\pmod n$:} \hl{if $\gcd(a,n)\nmid b$, no solution}; else divide all three by $\gcd$, multiply by $a^{-1}$.\\
 $3x\equiv1\pmod7$: $\gcd(3,7){=}1$; $3^{-1}{=}5$ ($3{\cdot}5{=}15\equiv1$); $x\equiv5\pmod7$.\\
 $4x\equiv2\pmod6$: $\gcd(4,6){=}2$ divides $2\Rightarrow2$ solutions; divide: $2x\equiv1\pmod3$; $2^{-1}{=}2$; $x\equiv2\pmod3\Rightarrow x{=}2,5$ (check $4{\cdot}2{=}8\equiv2$, $4{\cdot}5{=}20\equiv2$).
 \end{sloppypar}
@@ -362,7 +361,7 @@ $3^{49}\bmod7$: $3^6\equiv1$; $49{=}6{\cdot}8{+}1$; $3^{49}\equiv3^1{=}3$.\\
 $11^{1000}\bmod17$: $11^{16}\equiv1$; $1000{=}16{\cdot}62{+}8$; $11^8{=}(11^2)^4{=}(121\equiv2)^4{=}16\equiv-1\Rightarrow11^{1000}\equiv16$.\\
 $2^{200}\bmod31$: $2^{30}\equiv1$; $200{=}30{\cdot}6{+}20$; $2^{20}{=}(2^5)^4{=}32^4\equiv1$. \hl{Shortcut} if base $\equiv0$: $21^{50}\bmod7{=}0$.\\
 \textbf{Mod-6 $\times$ table} (read off inverses \& zero divisors):\\
-${\renewcommand{\arraystretch}{0.88}\begin{array}{c|cccccc}\times&0&1&2&3&4&5\\\hline0&0&0&0&0&0&0\\1&0&1&2&3&4&5\\2&0&2&4&0&2&4\\3&0&3&0&3&0&3\\4&0&4&2&0&4&2\\5&0&5&4&3&2&1\end{array}}$
+${\renewcommand{\arraystretch}{0.74}\begin{array}{c|cccccc}\times&0&1&2&3&4&5\\\hline0&0&0&0&0&0&0\\1&0&1&2&3&4&5\\2&0&2&4&0&2&4\\3&0&3&0&3&0&3\\4&0&4&2&0&4&2\\5&0&5&4&3&2&1\end{array}}$
 $\quad$ Row 5 has a 1 (col 5) $\Rightarrow5^{-1}{=}5$; rows 2,3,4 hit 0 $\Rightarrow$ zero divisors. Units $\{1,5\}$.
 \end{sloppypar}
 
@@ -390,7 +389,7 @@ Row $r$: $r{\circ}e{=}r$, $r{\circ}r{=}r^2$, $r{\circ}r^2{=}e$, $r{\circ}\ell_1{
 
 \subsection{36. APN multiplication (schoolbook)}
 \begin{sloppypar}\raggedright
-Multiply digit lists base $B$: each digit pair $a_i b_j$ adds to position $i{+}j$, carrying down. $[4,2]\times[3,1]$ base 10 ($24{\times}13{=}312$): units $4{\cdot}3{=}12\to$ digit $2$, carry $1$; then $4{\cdot}1{+}2{\cdot}3{+}1{=}11\to$ digit $1$, carry $1$; then $2{\cdot}1{+}1{=}3$. Result $[2,1,3]{=}312$.
+Multiply digit lists base $B$: \hl{each digit pair $a_i b_j$ adds to position $i{+}j$}, carrying down. $[4,2]\times[3,1]$ base 10 ($24{\times}13{=}312$): units $4{\cdot}3{=}12\to$ digit $2$, carry $1$; then $4{\cdot}1{+}2{\cdot}3{+}1{=}11\to$ digit $1$, carry $1$; then $2{\cdot}1{+}1{=}3$. Result $[2,1,3]{=}312$.
 \end{sloppypar}
 
 \textbf{Quick Reference:} Powers of 2: $2^{10}=1024$, $2^{11}=2048$, $2^{20}\approx10^6$, $2^{31}\approx2.147{\times}10^9$, $2^{63}\approx9.22{\times}10^{18}$. $\sqrt2\approx1.41421$, $\sqrt3\approx1.73205$, $\pi\approx3.14159$, $e\approx2.71828$, $\ln6\approx1.79176$. $7!=5040$, $8!=40320$, $10!=3628800$. $\frac9{11}=0.(81)$, $\frac13=0.(3)$, $0.1_{10}=0.0\overline{0011}_2$.
