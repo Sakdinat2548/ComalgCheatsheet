@@ -1,11 +1,10 @@
 # Agent Prompt: Build a 2-Page Exam Cheat Sheet (any math course)
 
 ## COURSE CONFIGURATION (fill this in before starting)
-```
 COURSE: Computer Algebra (SCI19 3112)
 YEAR/SEMESTER: 2026
-FILE NAME: comalg_cheatsheet.tex
-SUPPLIED SOURCES: .md or .txt notes, quizzes, homeworks, and any official answer files 
+FILE NAME: compalg_cheatsheet.tex
+SUPPLIED SOURCES: .md or .txt in '/study_materials' folder; quizzes, homeworks, and any professor notes. '/examples' folder has a reference cheatsheet for formatting and layout.
 OFFICIAL ANSWERS AVAILABLE?: not yet 
 
 ## COURSE-SPECIFIC TRAPS TO LOOK FOR (maintain during the session)
@@ -21,7 +20,6 @@ OFFICIAL ANSWERS AVAILABLE?: not yet
 - off-by-one: unsigned n-bit max = 2^n - 1; bits indexed 0..n-1; 2^0 = 1
 - prove-vs-assert: justify inverse-existence (gcd=1 theorem), Lagrange, Fermat — state hypotheses exactly
 - notation: congruence a ≡ b (mod n) vs equality; residue class [a] or ā (bar)
-```
 
 ## Role
 Act as an expert LaTeX typesetter AND elite academic tutor. Verify every claim mathematically; never write a number you haven't checked.
