@@ -144,20 +144,22 @@ $(\mathbb Z,+)$ and $(\mathbb Z_n,+)$ are groups ($e{=}0$, inverse $[-a]$). $\ma
 \textbf{4-axiom check for $\mathbb Z_5^*$:} (1) closure: $[2][4]=[3]\in$ set, etc. (all products in $\{1,2,3,4\}$); (2) identity $[1]$; (3) associativity inherited from integers (needs $[ab]c=a[bc]$); (4) every element has inverse (table). $\Rightarrow$ group.
 
 \subsection{Order, Cyclic, Lagrange}
-\hl{Order of group} $|G|$ = \#elements; $|(\mathbb Z_n,+)|=n$, $|(\mathbb Z_p^*,\times)|=p-1$. \hl{Order of element} $\mathrm{ord}(g)$ = smallest $n>0$ with $g^n=e$ (additive: $n\cdot g=0$); $\mathrm{ord}(e)=1$; if none, $\infty$.
+\begin{sloppypar}\raggedright
+\hl{Order of group} $|G|$ = \#elements; finite: $|(\mathbb Z_n,+)|=n$, $|(\mathbb Z_p^*,\times)|=p-1$; infinite: $|(\mathbb Z,+)|=\infty$. \hl{Order of element} $\mathrm{ord}(g)$ = smallest $n>0$ with $g^n=e$ (additive: $n\cdot g=0$); $\mathrm{ord}(e)=1$; if none, $\infty$.
 \hl{Lagrange:} $G$ finite $\Rightarrow$ \hl{$\mathrm{ord}(g)\mid|G|$}; corollary $g^{|G|}=e$. \hl{Generators:} $G$ cyclic $\iff$ some $g$ has $\mathrm{ord}(g)=|G|$; then $G=\langle g\rangle$. In $\mathbb Z_n^+$: generators are $[k]$ with $\gcd(k,n)=1$ (e.g. $\mathbb Z_4^+$: $[1],[3]$; $\mathbb Z_8^+$: $[1],[3],[5],[7]$).
 \textbf{Worked:} $\mathbb Z_5^*$: $\mathrm{ord}(1){=}1,\mathrm{ord}(4){=}2,\mathrm{ord}(2){=}\mathrm{ord}(3){=}4$; generators $2,3$. $\mathbb Z_8^+$: $\mathrm{ord}[2]{=}4,\ \mathrm{ord}[7]{=}8$. $\mathbb Z_{13}^*$: $|G|{=}12$, $2$ is a generator ($2^{12}\equiv1$, no smaller power $\equiv1$; powers hit all $12$ elements). \hl{Possible orders} divide $|G|$: $|\mathbb Z_{16}^+|{=}16\Rightarrow$ orders $\in\{1,2,4,8,16\}$; $|\mathbb Z_{11}^*|{=}10\Rightarrow$ orders $\in\{1,2,5,10\}$.
+\end{sloppypar}
 
 \subsection{Multiplication Table: $D_3$ (triangle symmetries)}
-$D_3=\{e,r,r^2,\ell_1,\ell_2,\ell_3\}$, $|D_3|=6$: $r$=rot $120^\circ$, $r^2$=rot $240^\circ$, $\ell_i$=reflections. Entry = apply \hl{column first, then row}: $r\circ r=r^2$, $\ell_3\circ\ell_1=r^2$, $\ell_2\circ\ell_1=r$, $\ell_3\circ\ell_2=r$. Inverses: $r^{-1}=r^2$, $(r^2)^{-1}=r$, $\ell_i^{-1}=\ell_i$.
+Symmetries of a shape form a group (closed under $\circ$): $D_3$ = the symmetries of a triangle, $D_3=\{e,r,r^2,\ell_1,\ell_2,\ell_3\}$, $|D_3|=6$: $r$=rot $120^\circ$, $r^2$=rot $240^\circ$, $\ell_i$=reflections. Entry = apply \hl{column first, then row}: $r\circ r=r^2$, $\ell_3\circ\ell_1=r^2$, $\ell_2\circ\ell_1=r$, $\ell_3\circ\ell_2=r$. Inverses: $r^{-1}=r^2$, $(r^2)^{-1}=r$, $\ell_i^{-1}=\ell_i$.
 \begin{center}\scriptsize
-$\begin{array}{c|cccccc}\cdot&e&r&r^2&\ell_1&\ell_2&\ell_3\\\hline
+${\renewcommand{\arraystretch}{0.9}\begin{array}{c|cccccc}\cdot&e&r&r^2&\ell_1&\ell_2&\ell_3\\\hline
 e&e&r&r^2&\ell_1&\ell_2&\ell_3\\
 r&r&r^2&e&\ell_2&\ell_3&\ell_1\\
 r^2&r^2&e&r&\ell_3&\ell_1&\ell_2\\
 \ell_1&\ell_1&\ell_3&\ell_2&e&r^2&r\\
 \ell_2&\ell_2&\ell_1&\ell_3&r&e&r^2\\
-\ell_3&\ell_3&\ell_2&\ell_1&r^2&r&e\end{array}$
+\ell_3&\ell_3&\ell_2&\ell_1&r^2&r&e\end{array}}$
 \end{center}
 
 \section{Fermat's Little Theorem}
@@ -330,7 +332,6 @@ Single (32-bit, bias 127): smallest positive normal $2^{-126}\approx1.17549{\tim
 \subsection{27. LCM, more Euclid, base-$B$ practice}
 \begin{sloppypar}\raggedright
 $\mathrm{lcm}(a,b){=}\frac{ab}{\gcd(a,b)}$: $\mathrm{lcm}(12,18){=}\frac{216}{6}{=}36$. \\
-Euclid again: $\gcd(84,30)$: $84{=}30{\cdot}2{+}24$, $30{=}24{\cdot}1{+}6$, $24{=}6{\cdot}4{+}0\Rightarrow\gcd{=}6$.\\
 Base-60: $3601{=}[1,0,1]_{60}$ ($60^2{+}1$), $125{=}[0,2,5]_{60}$; sum $[1,2,6]_{60}{=}3600{+}120{+}6{=}3726$ ($3601{+}125$).\\
 \end{sloppypar}
 
@@ -391,8 +392,6 @@ Row $r$: $r{\circ}e{=}r$, $r{\circ}r{=}r^2$, $r{\circ}r^2{=}e$, $r{\circ}\ell_1{
 \begin{sloppypar}\raggedright
 Multiply digit lists base $B$: \hl{each digit pair $a_i b_j$ adds to position $i{+}j$}, carrying down. $[4,2]\times[3,1]$ base 10 ($24{\times}13{=}312$): units $4{\cdot}3{=}12\to$ digit $2$, carry $1$; then $4{\cdot}1{+}2{\cdot}3{+}1{=}11\to$ digit $1$, carry $1$; then $2{\cdot}1{+}1{=}3$. Result $[2,1,3]{=}312$.
 \end{sloppypar}
-
-\textbf{Quick Reference:} Powers of 2: $2^{10}=1024$, $2^{11}=2048$, $2^{20}\approx10^6$, $2^{31}\approx2.147{\times}10^9$, $2^{63}\approx9.22{\times}10^{18}$. $\sqrt2\approx1.41421$, $\sqrt3\approx1.73205$, $\pi\approx3.14159$, $e\approx2.71828$, $\ln6\approx1.79176$. $7!=5040$, $8!=40320$, $10!=3628800$. $\frac9{11}=0.(81)$, $\frac13=0.(3)$, $0.1_{10}=0.0\overline{0011}_2$.
 
 \end{multicols}
 \end{document}
