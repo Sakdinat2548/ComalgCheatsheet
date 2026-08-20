@@ -94,7 +94,8 @@ Division: $a=bq+r$, $0\le r<b$ ($q=a\,\mathrm{div}\,b$, $r=a\bmod b$).
 
 \section{Arbitrary-Precision Integers (APN)}
 Fixed $n$ bits $\Rightarrow$ max $\approx 2^{n-1}$; to do exact big arithmetic, store number as a \hl{digit list in base $B$}, each entry $\in[0,B-1]$, \hl{least significant first}:
-$$x=d_0+d_1B+d_2B^2+\cdots\ \Longleftrightarrow\ [d_0,d_1,d_2,\ldots]$$
+{\setlength{\abovedisplayskip}{1.5pt}\setlength{\belowdisplayskip}{1.5pt}\setlength{\abovedisplayshortskip}{0.75pt}\setlength{\belowdisplayshortskip}{0.75pt}
+$$x=d_0+d_1B+d_2B^2+\cdots\ \Longleftrightarrow\ [d_0,d_1,d_2,\ldots]$$}
 $1{,}234{,}567{,}890$ with $B{=}10^3\Rightarrow[890,567,234,1]$. \hl{Addition:} elementwise with carry. $x{=}1{,}234{,}567$, $y{=}987{,}654$, $B{=}10^3$: $[567,234,1]+[654,987,0]$ $\Rightarrow 221,222,2$ $\Rightarrow 2{,}222{,}221$. \hl{List$\to$dec:} $\sum d_iB^i$; \hl{dec$\to$list:} repeated $\div B$. Complexity: add $O(n)$, schoolbook mult $O(n^2)$, FFT mult $O(n\log n)$.
 
 \section{Prime Factorization}
@@ -277,14 +278,11 @@ Mod 5 (prime, all nonzero invertible): row 3 has 1 at col 2 $\Rightarrow3^{-1}{=
 
 \subsection{18. Polynomial modular arithmetic (worked)}
 \begin{sloppypar}\raggedright
-\textbf{Reduce} mod $m(x)$ two ways: (A) use $m(x)\equiv0$ to eliminate powers; (B) \hl{long-divide} and keep the remainder (degree $<$ deg $m$). Mod $x^2{+}1$: $x^2\equiv-1$.\\
-\textbf{(A)} $2x^3{+}x^2{-}3x{+}4$: $2x^3{=}2x{\cdot}x^2\equiv-2x$; $x^2\equiv-1$; so $\equiv-2x{-}1{-}3x{+}4{=}3{-}5x$ (class $[3-5x]$).\\
-\textbf{(B) long division} of $x^3{+}2x^2{+}x{+}1$ by $x^2{+}1$:
-\end{sloppypar}
-\resizebox{0.86\linewidth}{!}{\polylongdiv[style=C]{x^3+2x^2+x+1}{x^2+1}}
-\begin{sloppypar}\raggedright
-$\Rightarrow$ quotient $x{+}2$, remainder $-1$; \hl{check} $(x{+}2)(x^2{+}1){+}(-1){=}x^3{+}2x^2{+}x{+}1$.\\
-\textbf{Powers} (reduce at the end): $(1{+}x)^3{=}1{+}3x{+}3x^2{+}x^3\equiv1{+}3x{-}3{-}x{=}-2{+}2x$. Classes mod $x^2{+}1$ are all $a{+}bx$ (Gaussian integers $a{+}bi$).
+\textbf{Method:} \hl{add a multiple of $m(x)$ inside the class bracket} to cancel the leading term, down to deg $<$ deg $m$ (same as long division, keep remainder).\\
+\textbf{Worked} mod $x^2{+}1$: $[2x^3{+}x^2{-}3x{+}4]_{x^2+1}$\\
+$=\ [2x^3{+}x^2{-}3x{+}4+(x^2{+}1)(-2x)]_{x^2+1}\ =\ [x^2{-}5x{+}4]_{x^2+1}$\\
+$=\ [x^2{-}5x{+}4+(x^2{+}1)(-1)]_{x^2+1}\ =\ [-5x{+}3]_{x^2+1}$.\\
+\hl{Powers:} $[f]^k{=}[f^k]$; reduce first (or at the end).
 \end{sloppypar}
 
 \subsection{19. Inverse existence / zero divisors (theorem)}
