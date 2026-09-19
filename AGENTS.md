@@ -4,6 +4,7 @@
 COURSE: Computer Algebra (SCI19 3112)
 YEAR/SEMESTER: 2026
 FILE NAME: /midterm/compalg_cheatsheet.tex, /final/compalg_final_cheatsheet.tex
+STATUS: both sheets at 2 pages, zero warnings; all numbers verified by computation (90-check script for final)
 SUPPLIED SOURCES: .md or .txt in '/study_materials' folder; quizzes, homeworks, and any professor notes. '/examples' folder has a reference cheatsheet for formatting and layout.
 OFFICIAL ANSWERS AVAILABLE?: not yet 
 
@@ -20,6 +21,12 @@ OFFICIAL ANSWERS AVAILABLE?: not yet
 - off-by-one: unsigned n-bit max = 2^n - 1; bits indexed 0..n-1; 2^0 = 1
 - prove-vs-assert: justify inverse-existence (gcd=1 theorem), Lagrange, Fermat — state hypotheses exactly
 - notation: congruence a ≡ b (mod n) vs equality; residue class [a] or ā (bar)
+- Euler totient theorem: needs gcd(a,n)=1 (FLT additionally needs p prime); FLT = Lagrange on Z_p*
+- power cipher: decryption exponent needs bd ≡ 1 (mod p−1); cipher bijective ⟺ gcd(b,p−1)=1
+- FFT: needs n = power of 2 (zero-pad otherwise); N_FFT = smallest power of 2 ≥ 2n−1; product of deg-n, deg-m needs n+m+1 points
+- polynomial GCD is monic (leading coefficient 1); overdetermined system: deg(gcd)=0 ⟹ inconsistent, deg≥1 ⟹ common roots = roots of gcd
+- Lagrange-consequence claims: check "for all a" carefully (e.g. in Z_24*, [5]^2=[1] so every even x works; only odd x never gives [a]^x=[1])
+- lecture-notes typos exist: verify every worked number by computation; official/prof answer wins, but flag discrepancies on the sheet (e.g. [2,15,7] carries to 852, not 825)
 
 ## Role
 Act as an expert LaTeX typesetter AND elite academic tutor. Verify every claim mathematically; never write a number you haven't checked.
@@ -34,6 +41,7 @@ CRITICAL: If PDFs are supplied but you cannot read them (no PDF-reading capabili
 - Extract repeating question types and heavily weighted concepts from the quizzes/homeworks; prioritize those in layout.
 - Keep the document ALWAYS exactly 2 A4 pages. When adding content, fill the bottom of page 2; when space runs out, trim low-priority prose before deleting worked examples.
 - If the user later supplies official/answer files or corrected answers, re-check your sheet against them and fix discrepancies — the official answer wins.
+- Page-2 fill measurement: the second page's text may live in a separate Form XObject stream, NOT the second `BT..TJ` stream (index-based detection picks fonts/XObjects). Measure per-stream text length and always confirm by extracting the tail text of the true page-2 stream.
 
 ## Mathematical correctness checklist (MANDATORY)
 - Verify EVERY numeric result (constants, coefficients, determinants, derivatives/integrals, error bounds, interpolated/extrapolated values, root-finding iterations, matrix operations, statistical quantities, etc.) by computation before writing it. Use a quick Python one-liner per batch. Confirm identities by evaluating both sides at several points.
@@ -56,6 +64,10 @@ CRITICAL: If PDFs are supplied but you cannot read them (no PDF-reading capabili
 - Equation wrapping rule: never let a line end with a bare `=`. Split chained equalities (`A=B=C≈D`) at controlled `\\` breaks so each line holds one complete computation step; every continuation line starts with its own `=`.
 - Highlight the 5-8 most important formulas/ideas with a compact `tcolorbox` (`keybox`: small padding, thin rule, e.g. gold background + dark-red frame). Use display-style math inside, never `equation*` inside the box.
 - Do NOT define `\hl` as `\textbf{\textcolor{...}}` and use it inside math mode — it breaks. Use `\textcolor{BrickRed}{...}` inside math, plain `\textbf` in text.
+- Same ban applies to ALL `\textbf`+`\textcolor` macros (`\wk`, `\ex`, `\kn`): math may appear INSIDE their braces, but never use them INSIDE `$...$` with content containing `^`, `_`, `\frac` (fatal "Missing $ inserted"). When an answer inside math needs color, close math first (`...\Rightarrow$\kn{H}.`), never wrap the caret.
+- Color system (function-based, MAX 4 colors + neutrals): RoyalBlue = structure + worked-example templates (`\ex`); OliveGreen = procedures/steps/checks (`\wk`: Step N, Check, recipes, methods); BrickRed = traps/conditions (`\hl`); Orange family = reference (`\kn` BurntOrange for headline answers, Apricot `obox` for relation lists, Apricot-tinted `kbox` for plug-in theorem boxes). Black/gray carry no meaning (body text, section rules).
+- Section rules: gray (`{\color{black!60}\titlerule[0.9pt]}`) to separate blue titles from blue `\ex` labels; subsection rules thin OliveGreen `0.4pt`.
+- Readability: `\linespread{1.2}` (raise only while page 2 has slack; compensate with trims if it overflows).
 - No literal Unicode symbols (✓, →, ×, etc.) in `.tex` under pdflatex+lmodern — fatal error. Use `$\checkmark$`, `$\Rightarrow$`, `$\times$`.
 - Worked-example skeleton (use everywhere): `Given ...` → `Step 1/2/3 ...` → boxed answer → `Check ...`. Plot/sketch questions get a numbered draw recipe (mark nodes → plot points → join → shade).
 - Section numbering: prefer automatic numbering (`\section{}`) or use hardcoded numbers consistently; if hardcoded, renumbering must be done manually when sections move.
