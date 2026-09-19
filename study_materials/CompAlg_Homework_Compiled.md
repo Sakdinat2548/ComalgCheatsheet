@@ -383,3 +383,235 @@ $$[16^4]_7, \quad [10^{100}]_9, \quad [23^2]_9, \quad [42^1]_{12},$$
 $$[a^{2n}]_m = ([a^2]_m)^n,$$
 *and*
 $$[a^{2n+1}]_m = [a^{2n} \cdot a]_m = ([a^2]_m)^n \cdot [a]_m.$$
+
+---
+
+## Source: Homework 11 (Lecture 15)
+
+*(Complex Numbers)*
+
+*In many situations, complex numbers can conveniently be identified with two-dimensional vectors. In this course, we adopt a geometric perspective. This homework is intended to develop geometric intuition about complex numbers and their basic operations.*
+
+**Question 1:** Plot the two complex numbers on the complex plane and approximately construct their sum geometrically. Then calculate the sum and verify that it is consistent with your construction.
+
+a) $-2 + 4i$ and $-3 - 7i$
+
+b) $-2 - i$ and $2 + i$
+
+c) $1 - 2i$ and $1 + 2i$
+
+**Question 2:** Find $|z|^2$ using the identity $|z|^2 = z\bar{z}$, if
+
+a) $z = -2 - 3i$
+
+b) $z = 4i$
+
+c) $\bar{z} = 4i$
+
+**Question 3:** Find $z_1/z_2$ and plot the vectors corresponding to $z_1$, $z_2$, and their quotient on the complex plane, if
+
+a) $z_1 = 2 + 6i$, $z_2 = 2$
+
+b) $z_1 = 1 + 6i$, $z_2 = 1 - 6i$
+
+c) $z_1 = 3 + 4i$, $z_2 = 1 - 6i$
+
+**Question 4:** Associate the complex numbers
+$$z_1 = a + bi, \qquad z_2 = c + di$$
+with the two-dimensional vectors
+$$u = (a, b), \qquad v = (c, d).$$
+
+a) What is the difference between the product of the complex numbers $z_1 z_2$ and the dot product of the vectors $u \cdot v$?
+
+b) Find $|z_1 z_2|^2$ and $(u \cdot v)^2$ in general, and for some particular choices of $a, b, c, d$. In which cases do these two quantities coincide?
+
+**Question 5:** Determine whether the set of complex numbers of the form
+$$2a + 7bi, \qquad a, b \in \mathbb{Z},$$
+forms an additive group.
+
+**Question 6:** Determine whether the set of complex numbers of the form
+$$3a + 3bi, \qquad a, b \in \mathbb{Z}, \ ab \neq 0,$$
+forms a multiplicative group.
+
+---
+
+## Source: Homework 12 (Lecture 16)
+
+*(Complex Numbers II)*
+
+*Multiplication of complex numbers has an interesting group structure. These exercises are intended to explore the group properties of complex numbers and to develop geometric intuition.*
+
+**Question 1:** Similar to as we did in the lecture, show that the set
+$$\{1, -1\}$$
+forms a multiplicative group. Plot its elements on the complex plane. Which element is a generator of the group? Verify that this group is a subgroup of the larger multiplicative group
+$$(\{1, -1, i, -i\}, *).$$
+
+**Question 2:** Repeat the same analysis for the set
+$$\{i, -i\}.$$
+What goes wrong in this case?
+
+**Question 3:** Verify the multiplicative property,
+$$|z_1| \cdot |z_2| = |z_1 \cdot z_2|,$$
+for
+$$z_1 = \frac{1+i}{\sqrt{2}}, \qquad z_2 = \frac{1-i}{\sqrt{2}}.$$
+Find the length of each number separately and then the length of their product.
+
+**Question 4:** Consider the group
+$$C_8^{*} = \left(\left\{\underbrace{1}_{z_1}, \underbrace{-1}_{z_2}, \underbrace{-i}_{z_3}, \underbrace{i}_{z_4}, \underbrace{\frac{1+i}{\sqrt2}}_{z_5}, \underbrace{\frac{-1+i}{\sqrt2}}_{z_6}, \underbrace{\frac{1-i}{\sqrt2}}_{z_7}, \underbrace{\frac{-1-i}{\sqrt2}}_{z_8}\right\}, *\right).$$
+Determine which elements of the set are obtained from the products $z_2 z_5$, $z_5 z_7$, $z_6 z_8$.
+
+**Question 5:** Using the formula for division of complex numbers, find the multiplicative inverse of
+$$z = \frac{-1-i}{\sqrt2}.$$
+
+**Question 6:** Using Euler's formula, express the following complex numbers in standard (rectangular) form. Then sketch the corresponding numbers (i.e., the corresponding vectors) on the complex plane:
+$$8e^{\frac{\pi}{3}i}, \qquad 11e^{\frac{3\pi}{2}i}.$$
+
+**Question 7:** Using de Moivre's formula, find the following roots of complex numbers and sketch them on the complex plane:
+$$\left(e^{i\frac{\pi}{2}}\right)^{1/3}, \qquad \left(e^{i\frac{\pi}{4}}\right)^{1/2}.$$
+
+---
+
+## Source: Homework 13 (Lecture 17)
+
+*(Roots of Unity)*
+
+*The roots of unity form an important subgroup of the multiplicative group of complex numbers and play a central role in many applications, including the Fast Fourier Transform (FFT). The purpose of this homework is to develop an understanding of the algebraic structure of this group, its generators, and its connection with modular arithmetic.*
+
+**Question 1:** Recall that the $n$th roots of unity are the complex roots of the equation
+$$z^n - 1 = 0.$$
+How many distinct complex $n$th roots of unity are there?
+
+**Question 2:** The number
+$$\omega_n = e^{\frac{2\pi i}{n}}$$
+is called a primitive $n$th root of unity. Verify that $\omega_n$ is a generator of the multiplicative group of all $n$th roots of unity. In other words, show that all $n$th roots of unity are obtained as successive powers
+$$\omega_n^0, \omega_n^1, \ldots, \omega_n^{n-1},$$
+after which the sequence repeats cyclically.
+
+**Question 3:** Two groups $G_1$ and $G_2$ are called isomorphic ($G_1 \cong G_2$) if they have the same structure.[^1] For finite groups, isomorphic groups necessarily have the same number of elements.
+
+Verify that the multiplicative group $C_4^{*}$ of all fourth roots of unity is isomorphic to the additive group $\mathbb{Z}_4^{+}$ of residue classes modulo 4, by comparing the following group tables:
+
+| $*$ | $1$ | $i$ | $-1$ | $-i$ |
+|---|---|---|---|---|
+| $1$ | $1$ | $i$ | $-1$ | $-i$ |
+| $i$ | $i$ | $-1$ | $-i$ | $1$ |
+| $-1$ | $-1$ | $-i$ | $1$ | $i$ |
+| $-i$ | $-i$ | $1$ | $i$ | $-1$ |
+
+| $+_4$ | $[0]$ | $[1]$ | $[2]$ | $[3]$ |
+|---|---|---|---|---|
+| $[0]$ | $[0]$ | $[1]$ | $[2]$ | $[3]$ |
+| $[1]$ | $[1]$ | $[2]$ | $[3]$ | $[0]$ |
+| $[2]$ | $[2]$ | $[3]$ | $[0]$ | $[1]$ |
+| $[3]$ | $[3]$ | $[0]$ | $[1]$ | $[2]$ |
+
+[^1]: More precisely, two groups are isomorphic if there exists a bijection between their elements that preserves the group operation.
+
+**Question 4:** Using the following addition table modulo 5,
+
+| $+_5$ | $[0]$ | $[1]$ | $[2]$ | $[3]$ | $[4]$ |
+|---|---|---|---|---|---|
+| $[0]$ | $[0]$ | $[1]$ | $[2]$ | $[3]$ | $[4]$ |
+| $[1]$ | $[1]$ | $[2]$ | $[3]$ | $[4]$ | $[0]$ |
+| $[2]$ | $[2]$ | $[3]$ | $[4]$ | $[0]$ | $[1]$ |
+| $[3]$ | $[3]$ | $[4]$ | $[0]$ | $[1]$ | $[2]$ |
+| $[4]$ | $[4]$ | $[0]$ | $[1]$ | $[2]$ | $[3]$ |
+
+fill in the multiplication table for the group $C_5^{*}$ of all fifth roots of unity given below. Use the isomorphism between the two groups by corresponding their generators and their powers:
+$$\omega_5 = e^{\frac{2\pi i}{5}} \longleftrightarrow [1]_5, \qquad \omega_5^2 = \omega_5 * \omega_5 = e^{\frac{4\pi i}{5}} \longleftrightarrow [1]_5 + [1]_5 = [2]_5,$$
+and similarly for the remaining powers of the generators.
+
+| $*$ | $1$ | $\omega_5$ | $\omega_5^2$ | $\omega_5^3$ | $\omega_5^4$ |
+|---|---|---|---|---|---|
+| $1$ |  |  |  |  |  |
+| $\omega_5$ |  |  |  |  |  |
+| $\omega_5^2$ |  |  |  |  |  |
+| $\omega_5^3$ |  |  |  |  |  |
+| $\omega_5^4$ |  |  |  |  |  |
+
+**Question 5:** Verify that every root of the equation
+$$z^{2^m} - 1 = 0, \qquad m \in \mathbb{N},$$
+is also a root of the equation
+$$(z^{2^m})^2 - 1 = 0.$$
+Conclude that
+$$C_{2^m}^{*} \subset C_{2^{m+1}}^{*},$$
+that is, the $2^m$th roots of unity form a subgroup of the $2^{m+1}$th roots of unity.
+
+---
+
+## Source: Homework 14 (Lecture 20)
+
+*(FFT/IFFT)*
+
+*This homework is intended as a useful supplement to the lectures on FFT and inverse FFT (IFFT).*
+
+**Question 1:** For the polynomial
+$$f(x) = 2 + 3x + 5x^3,$$
+write down the butterfly formulas and perform the FFT. As a result, write the polynomial in value representation.
+*Hint: First determine which root of unity you will need.*
+
+**Question 2:** Suppose that two values of a polynomial are given:
+$$\{(1, 1), (-1, 1+i)\}.$$
+Explain why $x_0 = 1$ and $x_1 = -1$. Using the IFFT formulas, recover the coefficient representation of the polynomial. The coefficients may turn out to be complex; this is perfectly normal.
+
+**Question 3:** Consider the number
+$$5678 = 8 + 7\cdot 10 + 6 \cdot 10^2 + 5 \cdot 10^3.$$
+Try to represent it as a polynomial $q(x)$ of degree three in the variable $x$. Compute $q(10)$ and $q(2)$.
+
+*The following problems are useful for developing a better understanding of the structure of the FFT algorithm.*
+
+**Question 4:** Let us briefly recall some basic facts about algorithms. Suppose that a problem is repeatedly divided into subproblems, so that the resulting structure can be represented as a binary tree with $n$ leaves.
+
+a) What is the depth of this tree?
+
+b) What is the complexity of the corresponding algorithm if the main computations are performed at the bottom (last) level? Assume that the computations at the intermediate levels take constant time. Give the complexity using Big-O notation.
+
+c) What is the complexity of the corresponding algorithm if additional computations proportional to $n$ are performed at each level of the tree?
+
+**Question 5:** Consider the cubic polynomial
+$$p(x) = a_0 + a_1 x + a_2 x^2 + a_3 x^3.$$
+Suppose that its values at the points $\omega_4^0, \omega_4^1, \omega_4^2, \omega_4^3$ are already known and are denoted by $y_0, y_1, y_2, y_3$, respectively. The coefficients can be recovered using the IFFT formulas with 4th roots of unity:
+$$a_0 = \frac{1}{4}(y_0 + y_1 + y_2 + y_3),$$
+$$a_1 = \frac{1}{4}(y_0 + y_1\omega_4^{-1} + y_2\omega_4^{-2} + y_3\omega_4^{-3}),$$
+$$\ldots$$
+$$a_3 = \frac{1}{4}(y_0 + y_1\omega_4^{-3} + y_2\omega_4^{-6} + y_3\omega_4^{-9}).$$
+
+a) Recover the coefficient $a_2$ in a similar way.
+
+b) Simplify the resulting expressions for the coefficients using the standard properties of roots of unity.
+
+c) Substitute the resulting formulas for the coefficients into $p(\omega_4)$ and compute the result, taking into account that $\omega_4 = i$. If everything has been done correctly, you should obtain the known value of the polynomial at $\omega_4$.
+
+**Question 6:** We use the FFT to transform the polynomial
+$$p(x) = a_0 + a_1 x + \cdots + a_{n-1}x^{n-1},$$
+where $n = 32$. Thus, we need the 32nd roots of unity and will work with $\omega_{32}$.
+
+a) Write the polynomial as a sum of its even and odd parts, and write down the corresponding polynomials.
+
+b) Write the butterfly formulas for the first few powers of the roots of unity, for example, for $\omega^0, \omega^{16}$ and $\omega^1, \omega^{17}$.
+
+c) The even and odd parts in the formulas above have degree 15. Now split each of them again into its even and odd parts. How many polynomials do you obtain in total? Try to understand how many times each of them is used in the original FFT algorithm for $\omega_{32}$.
+
+**Question 7:** Read the derivation of the IFFT formulas in the lecture notes, Section 4.6, and try to reproduce and understand the main steps of the derivation.
+
+---
+
+## Source: Homework 15 (Lecture 22)
+
+*(Introduction to Polynomial Systems)*
+
+*This homework is intended to reinforce some basic concepts related to polynomials.*
+
+**Question 1:** Show that the equation
+$$x^4 + 16 = 0$$
+has no real roots. According to the Fundamental Theorem of Algebra, how many roots does it have over $\mathbb{C}$? Try to find at least two roots of this equation. They can be guessed or found using the standard theory for extracting complex roots.
+
+**Question 2:** Suppose that
+$$h(x) = 4x^2 + 12x - 7$$
+is the GCD of two polynomials. Give the corresponding monic GCD.
+
+**Question 3:** Verify that
+$$\gcd(x^4 - 8x^3 + 17x^2 + 2x - 24,\ x^3 - 6x^2 + 11x - 6) = x^2 - 5x + 6.$$
+
+**Question 4:** Determine whether the following system is consistent. If it is, find all of its roots:
+$$\begin{cases} x^2 - 11x + 30 = 0, \\ x^3 - 10x^2 + 27x - 18 = 0. \end{cases}$$
