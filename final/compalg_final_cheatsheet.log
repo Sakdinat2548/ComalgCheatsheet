@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Built by MSYS2 project) (preloaded format=pdflatex 2026.8.19)  20 SEP 2026 05:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Built by MSYS2 project) (preloaded format=pdflatex 2026.8.19)  20 SEP 2026 05:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -671,7 +671,7 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \@temptokenb=\toks40
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
-7.
+5.
 
 (c:/msys64/ucrt64/share/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -683,20 +683,20 @@ File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 (./compalg_final_cheatsheet.aux)
 \openout1 = `compalg_final_cheatsheet.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -755,43 +755,43 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
-3.
+1.
 
 (c:/msys64/ucrt64/share/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-53.
+51.
 
 (c:/msys64/ucrt64/share/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-53.
+51.
 
 (c:/msys64/ucrt64/share/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 53.
+(Font)              <6> on input line 51.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 53.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
+(Font)              <5> on input line 51.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
 
 
 (c:/msys64/ucrt64/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
 
 
 (c:/msys64/ucrt64/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 53.
+(Font)              <7> on input line 51.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 65.
+(Font)              <8> on input line 63.
  [1
 
 {c:/msys64/ucrt64/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{c:/msys64/u
@@ -805,10 +805,10 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 19375 strings out of 469515
- 408885 string characters out of 5469684
- 906169 words of memory out of 5000000
- 47703 multiletter control sequences out of 15000+600000
+ 19371 strings out of 469515
+ 408860 string characters out of 5469684
+ 906208 words of memory out of 5000000
+ 47699 multiletter control sequences out of 15000+600000
  658992 words of font info for 67 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,11n,104p,653b,727s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -828,7 +828,7 @@ b><c:/msys64/ucrt64/share/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/msys64
 e/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/msys64/ucrt64/share/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/msys64/ucrt64/share/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on compalg_final_cheatsheet.pdf (2 pages, 264942 bytes).
+Output written on compalg_final_cheatsheet.pdf (2 pages, 265017 bytes).
 PDF statistics:
  108 PDF objects out of 1000 (max. 8388607)
  67 compressed objects within 1 object stream

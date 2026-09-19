@@ -38,11 +38,9 @@
 \newcommand{\hl}[1]{\textbf{\textcolor{BrickRed}{#1}}}
 \newcommand{\wk}[1]{\textbf{\textcolor{OliveGreen}{#1}}}
 \newcommand{\ex}[1]{\textbf{\textcolor{RoyalBlue}{#1}}}
-\newcommand{\kn}[1]{\textbf{\textcolor{BurntOrange}{#1}}}
 \newcommand{\sepline}{\vspace{1pt}{\color{RoyalBlue}\hrule}\vspace{3pt}}
 
-\newtcolorbox{kbox}{colback=Apricot!15,colframe=RoyalBlue!70,boxrule=0.6pt,arc=1.5pt,left=1.5pt,right=1.5pt,top=1pt,bottom=1pt,boxsep=0pt}
-\newtcolorbox{obox}{colback=Apricot!25,colframe=Orange!85!black,boxrule=0.6pt,arc=1.5pt,left=1.5pt,right=1.5pt,top=1pt,bottom=1pt,boxsep=0pt}
+\newtcolorbox{kbox}{colback=Goldenrod!10,colframe=RoyalBlue!70,boxrule=0.6pt,arc=1.5pt,left=1.5pt,right=1.5pt,top=1pt,bottom=1pt,boxsep=0pt}
 
 \begin{document}
 \footnotesize
@@ -68,20 +66,20 @@
 $\varphi(n){=}\#\{1{\le}k{\le}n:\gcd{=}1\}$. \hl{Formulas:} $p$ prime $\varphi(p){=}p{-}1$; $\varphi(p^k){=}p^k{-}p^{k-1}$; coprime $\varphi(mn){=}\varphi(m)\varphi(n)$. \ex{Worked:} $\varphi(16){=}8$ ($1,3,5,7,9,11,13,15$); $\varphi(17){=}16$; $\varphi(14){=}\varphi(2)\varphi(7){=}(2{-}1)(7{-}1){=}1{\cdot}6{=}6$; $\varphi(9){=}9{-}3{=}6$ (prime power).
 \end{sloppypar}
 \begin{kbox}\raggedright
-\textbf{Euler:} \hl{$a^{\varphi(n)}\equiv1\pmod n$ if $\gcd(a,n){=}1$}. FLT = prime case ($\varphi(p){=}p{-}1$) = Lagrange on $\mathbb Z_p^*$. \hl{Difference:} Euler works for composite moduli too.
+\textbf{Euler:} \hl{$a^{\varphi(n)}\equiv1\pmod n$ if $\gcd(a,n){=}1$}. FLT = prime case ($\varphi(p){=}p{-}1$) = Lagrange on $\mathbb Z_p^*$. \hl{Use:} prime $\to$ FLT (smaller exponent); composite $\to$ Euler. \hl{Idea:} reduce exponent mod $\varphi(n)$.
 \end{kbox}
 \begin{sloppypar}\raggedright
 \ex{Worked $3^{347}\bmod14$:} Given $\gcd(3,14){=}1$, $\varphi(14){=}6$.\\
 \wk{Step 1} (reduce exponent): $347{=}6{\cdot}57{+}5$ ($6{\cdot}57{=}342$).\\
-\wk{Step 2} (evaluate): $3^5{=}243$; $243{-}17{\cdot}14{=}243{-}238{=}5\Rightarrow\kn{[5]}$. \wk{Check:} $\mathrm{pow}{=}5$.
+\wk{Step 2} (evaluate): $3^5{=}243$; $243{-}17{\cdot}14{=}243{-}238{=}5\Rightarrow\hl{[5]}$. \wk{Check:} $\mathrm{pow}{=}5$.
 \end{sloppypar}
 
 \section{Crypto}
 \begin{sloppypar}\raggedright
-\textbf{Caesar:} $c\equiv m{+}s\pmod{26}$, $m\equiv c{-}s$. \ex{Worked} BY (B${=}1$,Y${=}24$), $s{=}20$: $1{+}20{=}21{=}$V, $24{+}20{=}44{-}26{=}18{=}$S $\Rightarrow$ \kn{VS}.\\
+\textbf{Caesar:} $c\equiv m{+}s\pmod{26}$, $m\equiv c{-}s$. \ex{Worked} BY (B${=}1$,Y${=}24$), $s{=}20$: $1{+}20{=}21{=}$V, $24{+}20{=}44{-}26{=}18{=}$S $\Rightarrow$ \hl{VS}.\\
 \textbf{Power:} $c\equiv m^b\pmod p$; $m\equiv c^d$, $bd\equiv1\pmod{p-1}$. \ex{Worked} $p{=}29,b{=}5$: B: $1^5{=}1{=}$B.\\
 Y \wk{Step 1} ($24\equiv{-}5$): $({-}5)^2{=}25$; \wk{Step 2:} $25^2{=}625$; $625{-}21{\cdot}29{=}625{-}609{=}16$.\\
-Y \wk{Step 3:} $16{\cdot}({-}5){=}{-}80$; ${-}80{+}3{\cdot}29{=}{-}80{+}87{=}7\Rightarrow$\kn{H}. $d$: $5d\equiv1\pmod{28}\Rightarrow \kn{d{=}17}$ ($5{\cdot}17{=}85{=}3{\cdot}28{+}1$).\\
+Y \wk{Step 3:} $16{\cdot}({-}5){=}{-}80$; ${-}80{+}3{\cdot}29{=}{-}80{+}87{=}7\Rightarrow$\hl{H}. $d$: $5d\equiv1\pmod{28}\Rightarrow \hl{d{=}17}$ ($5{\cdot}17{=}85{=}3{\cdot}28{+}1$).\\
 \hl{Correctness = bijective:} $D(E(x)){=}x$, $E(D(y)){=}y$. Caesar always bijective (shift). Power bijective $\iff\gcd(b,p{-}1){=}1$ (else many-to-one). Many-to-one: $\ge2$ symbols map together; surjective: covers whole target.\\
 \wk{Check decrypt:} VS${-}20$: $21{-}20{=}1{=}$B, $18{-}20{=}{-}2{+}26{=}24{=}$Y. Power: $7^{17}\bmod29{=}24{=}$Y \wk{Check} OK.
 \end{sloppypar}
@@ -109,9 +107,9 @@ Groups: $(\mathbb C,{+})$ $e{=}0$ inv ${-}z$; $(\mathbb C^*,{\cdot})$ $e{=}1$ in
 $\omega_n{=}e^{2\pi i/n}$; powers $\omega^0..\omega^{n-1}$ = all $n$ roots cyclically; primitive = generator; $n$ distinct roots of $z^n{-}1{=}0$.\\
 \hl{Primitive:} $\omega_n^k$ generates all $\iff\gcd(k,n){=}1$; e.g. $n{=}8$: $k{=}1,3,5,7$.
 \end{sloppypar}
-\begin{obox}\raggedright
+\begin{kbox}\raggedright
 \textbf{Relations ($n$ even):} $\omega^n{=}1$, $\omega^{n/2}{=}{-}1$, $\omega^2{=}\omega_{n/2}$, $\omega^{-1}{=}\bar\omega$, $\omega^{k+n/2}{=}{-}\omega^k$, $\omega^{2k}{=}\omega_{n/2}^k$, $\omega^{n-k}{=}\bar\omega^k$.
-\end{obox}
+\end{kbox}
 \begin{sloppypar}\raggedright
 \ex{Worked $\omega_8{=}(1{+}i)/\sqrt2$:} $\omega_8^4{=}{-}1$, $\omega_8^8{=}1$, $\omega_8^{-5}{=}\omega_8^{-5+8}{=}\omega_8^3{=}({-}1{+}i)/\sqrt2$; $\omega_{16}^4{=}e^{8\pi i/16}{=}i{=}\omega_4$. $\sqrt{i}{=}(1{+}i)/\sqrt2$ (check $((1{+}i)/\sqrt2)^2{=}i$); $\sqrt{-i}{=}({-}1{+}i)/\sqrt2$.\\
 \wk{Eval trick:} reduce exponents mod $n$, use $\omega_2{=}{-}1$.\\
@@ -149,13 +147,13 @@ Even/odd: $p(x){=}p_e(x^2){+}x\,p_o(x^2)$. \ex{Worked} $1{-}2x{+}3x^2{-}4x^3{+}5
 \textbf{Butterfly} ($k{=}0..n/2{-}1$): \hl{$p(\omega^k){=}p_e(\omega^{2k}){+}\omega^k p_o(\omega^{2k})$; $p(\omega^{k+n/2}){=}p_e(\omega^{2k}){-}\omega^k p_o(\omega^{2k})$}. Needs $n{=}2^t$.
 \end{kbox}
 \begin{sloppypar}\raggedright
-\hl{$N_{\mathrm{FFT}}\ge2n{-}1$}, smallest pow2 (4+4 coeffs deg3: product deg6, 7 coeffs $\Rightarrow \kn{N{=}8}$). Pipeline: coeff$\to$FFT$\to$vals$\to$pointwise ${\times}\to$IFFT$\to$coeff. Zero-pad; extra points OK if same poly. \wk{Idea:} one $(p_e,p_o)$ pair gives two values (halves work).\\
+\hl{$N_{\mathrm{FFT}}\ge2n{-}1$}, smallest pow2 (4+4 coeffs deg3: product deg6, 7 coeffs $\Rightarrow \hl{N{=}8}$). Pipeline: coeff$\to$FFT$\to$vals$\to$pointwise ${\times}\to$IFFT$\to$coeff. Zero-pad; extra points OK if same poly. \wk{Idea:} one $(p_e,p_o)$ pair gives two values (halves work).\\
 \hl{IFFT:} $a_j{=}\frac1n\sum_{k=0}^{n-1}y_k(\omega^{-j})^k$. \hl{Costs:} FFT/IFFT $O(n\log n)$ (depth $\log n\times O(n)$/level); pointwise $O(n)$; total $O(n\log n)$.\\
 \ex{Worked FFT $q{=}1{-}x^2{+}4x^3$} ($N{=}4$, $\omega_4{=}i$): $q(1){=}4$; $q(i){=}2{-}4i$; $q({-}1){=}{-}4$; $q({-}i){=}2{+}4i$. Butterfly check: $p_e(y){=}1{-}y$, $p_o(y){=}4y$; $q(i){=}p_e({-}1){+}i\,p_o({-}1){=}2{+}i({-}4){=}2{-}4i$.\\
 \ex{Butterfly table:} $k{=}0$: $p_e(1){=}0$, $p_o(1){=}4\Rightarrow q(1){=}0{+}4{=}4$, $q({-}1){=}0{-}4{=}{-}4$.\\
 $k{=}1$: $p_e({-}1){=}2$, $p_o({-}1){=}{-}4\Rightarrow q(i){=}2{+}i({-}4){=}2{-}4i$, $q({-}i){=}2{-}i({-}4){=}2{+}4i$.\\
 \ex{Full pipeline} $f{=}1{-}x,g{=}2{+}x$ ($N{=}4$): $F{:}0,1{-}i,2,1{+}i$; $G{:}3,2{+}i,1,2{-}i$; $H{=}F{\cdot}G{:}0,3{-}i,2,3{+}i$.\\
-IFFT: $a_0{=}(0{+}3{-}i{+}2{+}3{+}i)/4{=}8/4{=}2$; $a_1{=}({-}3i{-}1{-}2{+}3i{-}1)/4{=}{-}1$; $a_2{=}{-}1\Rightarrow$\kn{$h{=}2{-}x{-}x^2$} \wk{Check} OK.\\
+IFFT: $a_0{=}(0{+}3{-}i{+}2{+}3{+}i)/4{=}8/4{=}2$; $a_1{=}({-}3i{-}1{-}2{+}3i{-}1)/4{=}{-}1$; $a_2{=}{-}1\Rightarrow$\hl{$h{=}2{-}x{-}x^2$} \wk{Check} OK.\\
 \ex{Worked IFFT $y{=}({-}1,i,1,2)$:} $a_0{=}({-}1{+}i{+}1{+}2)/4{=}(2{+}i)/4{=}0.5{+}0.25i$; $a_1{=}({-}1{+}1{-}1{+}2i)/4{=}({-}1{+}2i)/4{=}{-}0.25{+}0.5i$.\\
 $a_2{=}({-}1{-}i{+}1{-}2)/4{=}({-}2{-}i)/4{=}{-}0.5{-}0.25i$; $a_3{=}({-}1{-}1{-}1{-}2i)/4{=}({-}3{-}2i)/4{=}{-}0.75{-}0.5i$.\\
 \wk{Check} $p(i){=}a_0{+}a_1i{-}a_2{-}a_3i{=}i{=}y_1$.
@@ -163,7 +161,7 @@ $a_2{=}({-}1{-}i{+}1{-}2)/4{=}({-}2{-}i)/4{=}{-}0.5{-}0.25i$; $a_3{=}({-}1{-}1{-
 
 \section{Int Mult, GCD, Systems}
 \begin{sloppypar}\raggedright
-Int as poly base $B$: $325\to5{+}2x{+}3x^2$ ($p(10){=}325$). Steps: polys $\to$ FFT $\to$ pointwise ${\times}$ $\to$ IFFT $\to$ carry to $[0,B{-}1]$ $\to$ eval $B$. \hl{Carry:} $[2,15,7]\to[2,5,8]{=}\kn{852}$ (raw $2{+}150{+}700{=}852$; notes typo $825$). $5678\to8{+}7x{+}6x^2{+}5x^3$; $q(10){=}5678$, $q(2){=}86$.\\
+Int as poly base $B$: $325\to5{+}2x{+}3x^2$ ($p(10){=}325$). Steps: polys $\to$ FFT $\to$ pointwise ${\times}$ $\to$ IFFT $\to$ carry to $[0,B{-}1]$ $\to$ eval $B$. \hl{Carry:} $[2,15,7]\to[2,5,8]{=}852$ (raw $2{+}150{+}700{=}852$; notes typo $825$). $5678\to8{+}7x{+}6x^2{+}5x^3$; $q(10){=}5678$, $q(2){=}86$. \hl{Idea:} every digit must land in $[0,B{-}1]$ (carry the rest).\\
 \hl{GCD monic} (lead 1): $4x^2{+}12x{-}7\to x^2{+}3x{-}7/4$. Euclid via synthetic division.\\
 \ex{Worked} $f{=}x^4{-}8x^3{+}17x^2{+}2x{-}24$, $g{=}x^3{-}6x^2{+}11x{-}6$:\\
 \wk{Step 1} (divide): $f{-}(x{-}2)g{=}{-}6x^2{+}30x{-}36{=}{-}6h$, $h{=}x^2{-}5x{+}6$.\\
@@ -172,7 +170,7 @@ Int as poly base $B$: $325\to5{+}2x{+}3x^2$ ($p(10){=}325$). Steps: polys $\to$ 
 Quot $x^2{-}5x{+}6$, rem $0$ (so $x{=}1$ root).\\
 \hl{Overdetermined:} $h{=}\gcd$; $\deg h{=}0\Rightarrow$ inconsistent ($x{-}1{=}0,x{+}1{=}0$); $\deg{\ge}1\Rightarrow$ common roots = roots of $h$.\\
 \ex{Worked:} $x^2{-}11x{+}30{=}0$: $25{-}55{+}30{=}0$, $36{-}66{+}30{=}0\Rightarrow5,6$.\\
-$x^3{-}10x^2{+}27x{-}18{=}0$: test $6$: $216{-}360{+}162{-}18{=}0$; roots $1,3,6\Rightarrow$ common \kn{$x{=}6$}.\\
+$x^3{-}10x^2{+}27x{-}18{=}0$: test $6$: $216{-}360{+}162{-}18{=}0$; roots $1,3,6\Rightarrow$ common \hl{$x{=}6$}.\\
 \hl{Resultant:} $\det$ condition for common root (eliminates a variable). $2{\times}2$: $\mathrm{Res}(x{-}1,x{+}1){=}(1)(1){-}({-}1)(1){=}2{\ne}0\Rightarrow$ no common root.
 \end{sloppypar}
 
@@ -204,7 +202,7 @@ $z_2z_5{=}({-}1{-}i)/\sqrt2{=}z_8$; $z_5z_7{=}1{=}z_1$; $z_6z_8{=}1{=}z_1$. Inve
 \ex{Div:} $(2{+}6i)/2{=}1{+}3i$. $(3{+}4i)/(1{-}6i){=}(3{+}4i)(1{+}6i)/37{=}({-}21{+}22i)/37$.\\
 ${\approx}{-}0.5676{+}0.5946i$ \wk{Check} ($37{\cdot}({-}0.5676){=}{-}21$, $37{\cdot}0.5946{=}22$). \ex{vs dot:} $z_1z_2{=}(ac{-}bd){+}(ad{+}bc)i$ vs $u{\cdot}v{=}ac{+}bd$; $|z_1z_2|^2{=}(a^2{+}b^2)(c^2{+}d^2)$ vs $(u{\cdot}v)^2{=}(ac{+}bd)^2$; coincide $\iff ad{=}bc$.\\
 E.g. $z_1{=}1{+}2i,z_2{=}3{+}4i$: $|z_1z_2|^2{=}(1{+}4)(9{+}16){=}125$ vs $(3{+}8)^2{=}121$ ($1{\cdot}4{\ne}2{\cdot}3$).\\
-\ex{Even/odd twice:} $p_e(y){=}1{+}3y{+}5y^2{+}7y^3\Rightarrow p_{ee}(z){=}1{+}5z$, $p_{eo}(z){=}3{+}7z$; $p_o(y){=}{-}2{-}4y{-}6y^2{-}8y^3\Rightarrow p_{oe}(z){=}{-}2{-}6z$, $p_{oo}(z){=}{-}4{-}8z$. \wk{Check:} $p_{ee}(y^2){+}y\,p_{eo}(y^2){=}1{+}5y^2{+}3y{+}7y^3{=}p_e$.\\
+\ex{Even/odd twice:} $p_e(y){=}1{+}3y{+}5y^2{+}7y^3\Rightarrow p_{ee}(z){=}1{+}5z$, $p_{eo}(z){=}3{+}7z$; $p_o(y){=}{-}2{-}4y{-}6y^2{-}8y^3\Rightarrow p_{oe}(z){=}{-}2{-}6z$, $p_{oo}(z){=}{-}4{-}8z$.\\
 \ex{Big-O tree} ($n$ leaves, balanced binary): depth $\log_2n$; bottom-only work $\Rightarrow O(n)$; $O(n)$ per level $\Rightarrow O(n\log n)$.\\
 \ex{$C_5^*$ row via iso:} $\omega_5^4{\cdot}\omega_5^4{=}\omega_5^8{=}\omega_5^3\leftrightarrow[4]{+}[4]{=}[8]{=}[3]$. Gen $\omega_5\leftrightarrow[1]_5$ powers fill table.
 \end{sloppypar}
@@ -213,7 +211,7 @@ E.g. $z_1{=}1{+}2i,z_2{=}3{+}4i$: $|z_1z_2|^2{=}(1{+}4)(9{+}16){=}125$ vs $(3{+}
 \begin{sloppypar}\raggedright
 \ex{Mod-8 ${\times}$ table (nonzero rows):} \hl{Rule:} row $a$ has $1\iff a$ invertible; row $a$ hits $0\Rightarrow$ zero divisor. Units = odd $\{1,3,5,7\}$ ($\gcd{=}1$); $1^{-1}{=}1$, $3^{-1}{=}3$ ($9{-}8{=}1$), $5^{-1}{=}5$ ($25{-}24{=}1$), $7^{-1}{=}7$ ($49{-}48{=}1$). Even rows lack $1$. \hl{Zero divisors:} $2{\cdot}4{=}8\equiv0$, $6{\cdot}4{=}24\equiv0$ ($24{-}24$).\\
 \ex{FFT $f{=}2{+}3x{+}5x^3$} ($N{=}4$, $\omega_4{=}i$; $p_e(y){=}2$, $p_o(y){=}3{+}5y$): $f(1){=}2{+}3{+}5{=}10$; $f(i){=}2{+}3i{+}5({-}i){=}2{-}2i$; $f({-}1){=}2{-}3{-}5{=}{-}6$; $f({-}i){=}2{-}3i{+}5i{=}2{+}2i$.\\
-\ex{DeMoivre power:} $((1{+}i)/\sqrt2)^8{=}(e^{i\pi/4})^8{=}e^{2\pi i}{=}1$ (angle ${\times}8$). Specials: $e^{i\pi}{=}{-}1$, $e^{2\pi i}{=}1$. \ex{Decrypt proof:} $m\equiv c^d{=}(m^b)^d{=}m^{bd}{=}m^{1{+}k(p-1)}{=}m{\cdot}(m^{p-1})^k\equiv m$ (FLT, $p$ prime, $p{\nmid}m$).
+\ex{DeMoivre power:} $((1{+}i)/\sqrt2)^8{=}(e^{i\pi/4})^8{=}e^{2\pi i}{=}1$ (angle ${\times}8$). \ex{Decrypt proof:} $m\equiv c^d{=}(m^b)^d{=}m^{bd}{=}m^{1{+}k(p-1)}{=}m{\cdot}(m^{p-1})^k\equiv m$ (FLT, $p$ prime, $p{\nmid}m$).
 \end{sloppypar}
 
 \section{Tables + Step-by-Step Recoveries}
@@ -231,7 +229,7 @@ $\begin{array}{c|cccc}*&1&i&{-}1&{-}i\\\hline1&1&i&{-}1&{-}i\\i&i&{-}1&{-}i&1\\{
 $\begin{array}{c|cccc}+&0&1&2&3\\\hline0&0&1&2&3\\1&1&2&3&0\\2&2&3&0&1\\3&3&0&1&2\end{array}$
 \end{center}
 \begin{sloppypar}\raggedright
-\ex{Recover $h{=}a{+}bx{+}cx^2$ from values $(0,2,0)$ at $({-}2,0,1)$:} $a{-}2b{+}4c{=}0$, $a{=}2$, $a{+}b{+}c{=}0$. \wk{Step 1:} $a{=}2$. \wk{Step 2:} $b{+}c{=}{-}2$, ${-}2b{+}4c{=}{-}2\Rightarrow b{-}2c{=}1$. \wk{Step 3:} subtract: $3c{=}{-}3\Rightarrow c{=}{-}1$, $b{=}{-}1$. \kn{Box:} \kn{$h{=}2{-}x{-}x^2$}. \wk{Check:} $2{+}2{-}4{=}0$, $2$, $2{-}1{-}1{=}0$.\\
+\ex{Recover $h{=}a{+}bx{+}cx^2$ from values $(0,2,0)$ at $({-}2,0,1)$:} $a{-}2b{+}4c{=}0$, $a{=}2$, $a{+}b{+}c{=}0$. \wk{Step 1:} $a{=}2$. \wk{Step 2:} $b{+}c{=}{-}2$, ${-}2b{+}4c{=}{-}2\Rightarrow b{-}2c{=}1$. \wk{Step 3:} subtract: $3c{=}{-}3\Rightarrow c{=}{-}1$, $b{=}{-}1$. \hl{Box:} \hl{$h{=}2{-}x{-}x^2$}. \wk{Check:} $2{+}2{-}4{=}0$, $2$, $2{-}1{-}1{=}0$.\\
 \ex{Read graph $\to$ number:} point $(x,y)\to x{+}yi$; length $r$, angle $\theta\to r(\cos\theta{+}i\sin\theta)$.
 \end{sloppypar}
 
