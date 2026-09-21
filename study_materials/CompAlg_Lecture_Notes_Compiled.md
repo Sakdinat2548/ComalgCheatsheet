@@ -15,6 +15,10 @@ The term "algebra" in Computer Algebra is closely related to abstract algebra an
 **Content Text:**
 Unlike numerical analysis, computer algebra seeks exact solutions whenever possible, attempting to preserve exact symbolic information rather than replacing it with numerical approximations at an early stage.
 
+**Content Type: Definition**
+**Content Text:**
+Methods from functional programming have traditionally played an important role in symbolic computation, as have data structures such as lists and trees. Lisp was one of the earliest (functional) programming languages designed for symbolic manipulation of lists; although no longer widely used itself, it has profoundly influenced later systems such as Scheme, Reduce, Maxima, and, to some extent, Maple, all of which reflect ideas from the Lisp tradition.
+
 ---
 
 ## Lecture 2: Computer Representation of Integers and Floating-Point Numbers
@@ -394,7 +398,21 @@ Isomorphism: $C_n^{*} \cong \mathbb{Z}_n^{+}$, via $\omega_n^k \mapsto [k]_n$, s
 
 **Content Type: Worked Example/Proof**
 **Content Text:**
-Example with $\mathbb{Z}_4^{+} = \{[0]_4,[1]_4,[2]_4,[3]_4\}$ and $\omega_4 = e^{2\pi i/4} = i$, powers $[1, i, -1, -i]$. The correspondence $[0]_4 \leftrightarrow 1$, $[1]_4 \leftrightarrow i$, $[2]_4 \leftrightarrow -1$, $[3]_4 \leftrightarrow -i$ shows $[1]_4+[2]_4=[3]_4 \leftrightarrow i\cdot(-1) = -i$, and $[3]_4+[2]_4=[1]_4 \leftrightarrow (-i)(-1) = i$. The group tables of $C_4^{*}$ and $\mathbb{Z}_4^{+}$ have the same structure.
+Example with $\mathbb{Z}_4^{+} = \{[0]_4,[1]_4,[2]_4,[3]_4\}$ and $\omega_4 = e^{2\pi i/4} = i$, powers $[1, i, -1, -i]$. The correspondence $[0]_4 \leftrightarrow 1$, $[1]_4 \leftrightarrow i$, $[2]_4 \leftrightarrow -1$, $[3]_4 \leftrightarrow -i$ shows $[1]_4+[2]_4=[3]_4 \leftrightarrow i\cdot(-1) = -i$, and $[3]_4+[2]_4=[1]_4 \leftrightarrow (-i)(-1) = i$. As a simple exercise, compare the group tables of $C_4^{*}$ and $\mathbb{Z}_4^{+}$, given below, and verify that they have the same structure:
+
+| $*$ | $1$ | $i$ | $-1$ | $-i$ |
+|---|---|---|---|---|
+| $1$ | $1$ | $i$ | $-1$ | $-i$ |
+| $i$ | $i$ | $-1$ | $-i$ | $1$ |
+| $-1$ | $-1$ | $-i$ | $1$ | $i$ |
+| $-i$ | $-i$ | $1$ | $i$ | $-1$ |
+
+| $+_4$ | $[0]$ | $[1]$ | $[2]$ | $[3]$ |
+|---|---|---|---|---|
+| $[0]$ | $[0]$ | $[1]$ | $[2]$ | $[3]$ |
+| $[1]$ | $[1]$ | $[2]$ | $[3]$ | $[0]$ |
+| $[2]$ | $[2]$ | $[3]$ | $[0]$ | $[1]$ |
+| $[3]$ | $[3]$ | $[0]$ | $[1]$ | $[2]$ |
 
 ---
 
@@ -412,6 +430,7 @@ Properties of $n$th roots of unity for even $n$ ($\omega_n = e^{2\pi i/n}$):
 $$\omega_n^{n/2} = -1, \quad \omega_n^2 = \omega_{n/2}, \quad \omega_n^n = 1, \quad \omega_n^{-1} = \overline{\omega_n},$$
 and consequently
 $$\omega_n^{k+n/2} = -\omega_n^k, \quad \omega_n^{2k} = \omega_{n/2}^k, \quad \omega_n^{n-k} = \omega_n^{-k}, \quad \omega_n^{-k} = \overline{\omega_n^k}.$$
+The last two of these properties actually hold for any $n \in \mathbb{N}$, but attention is restricted to even $n$ for the purposes of this course.
 
 **Content Type: Definition**
 **Content Text:**
@@ -521,6 +540,10 @@ Carrying example: in base 10, coefficient list $[2,15,7]$ is converted to $[2,5,
 **Content Text:**
 The overall complexity of polynomial multiplication using the FFT is $O(n\log n)$, since the $O(n)$ pointwise multiplication step does not dominate.
 
+**Content Type: Definition**
+**Content Text:**
+The FFT has many applications beyond polynomial multiplication, and is widely used in signal processing — for example, in the analysis of audio, images, and other digital signals. There are also various modifications and variants of the FFT designed for specific applications, though the basic FFT algorithm studied in this course is sufficient for its purposes.
+
 ---
 
 ## Lecture 22: Introduction to Polynomial Systems
@@ -529,11 +552,11 @@ The overall complexity of polynomial multiplication using the FFT is $O(n\log n)
 
 **Content Type: Definition**
 **Content Text:**
-A field is a set closed under addition, subtraction, multiplication, and division by a nonzero element (division by zero not allowed). $\mathbb{Q}, \mathbb{R}, \mathbb{C}$ are fields; $\mathbb{Z}$ and $\mathbb{N}$ are not.
+A field is a set closed under addition, subtraction, multiplication, and division by a nonzero element (division by zero not allowed). $\mathbb{Q}, \mathbb{R}, \mathbb{C}$ are fields; $\mathbb{Z}$ and $\mathbb{N}$ are not, since in $\mathbb{N}$ subtraction may produce an integer outside the set of natural numbers, while in $\mathbb{Z}$ division of two integers may produce a rational number outside $\mathbb{Z}$.
 
 **Content Type: Definition**
 **Content Text:**
-A root of a polynomial $f(x) \in K[x]$ is an element $a \in K$ such that $f(a)=0$.
+Polynomials in one variable $x$ are considered over a field $K$ (typically $K=\mathbb{R}$ or $K=\mathbb{C}$). A root of a polynomial $f(x) \in K[x]$ is an element $a \in K$ such that $f(a)=0$. It is easy to see that a polynomial does not necessarily have a root in an arbitrary field, which makes algebraically closed fields particularly important.
 
 **Content Type: Definition**
 **Content Text:**

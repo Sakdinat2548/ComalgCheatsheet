@@ -28,7 +28,7 @@ Reference: the prime numbers between 1 and 100 are $2, 3, 5, 7, 11, 13, 17, 19, 
 1. Compute the following greatest common divisors using Euclid's algorithm: (a) (0.5 points) $\gcd(1,0)$; (b) (0.5 points) $\gcd(84,60)$.
 2. (1 point) Represent the fraction $\dfrac{132}{154}$ as a pair $(p,q)$, $\gcd(p,q)=1$.
 3. (0.5 points) Suppose positive integers are represented in array form using the base $B=27$. What are the minimum and maximum possible values of an element of such an array?
-4. (0.5 points) Suppose the integer $120! = 6689502913449\ldots\underbrace{0\cdots0}_{\text{199 digits total}}$ is represented in array form using the base $B=1000$. How many elements should the corresponding array contain (minimum required length)?
+4. (0.5 points) Suppose the integer $\underbrace{120! = 6689502913449\ldots0\cdots0}_{\text{199 digits total}}$ is represented in array form using the base $B=1000$. How many elements should the corresponding array contain (minimum required length)?
 5. (0.5 points) Represent the integer $7834436793$ in array form using the base $B=1000$.
 6. (0.5 points) Represent the integer $7834436793$ in array form using the base $B=1011$.
 7. (3 points) Represent the integer $1234$ in array form using the base $B=32$.
@@ -85,7 +85,7 @@ Represent the product $x\cdot y$ as an array of pairs (prime, exponent). *Note: 
 4. Compute the following:
 (a) (0.5 points) $[125]_{17} + [241]_{17}$
 (b) (0.5 points) $[391]_{21} \cdot [457]_{21}$
-(c) (1 point) $[9^4]_7$
+(c) (1 point) $[94]_7$
 (d) (1.5 points) $([157]_{13} + [249]_{13}) \cdot [83]_{13}$
 5. Consider integer arithmetic modulo 8.
 (a) (1 point) Construct the multiplication table $*_8$.
