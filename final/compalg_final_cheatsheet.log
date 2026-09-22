@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Built by MSYS2 project) (preloaded format=pdflatex 2026.8.19)  22 SEP 2026 07:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Built by MSYS2 project) (preloaded format=pdflatex 2026.8.19)  22 SEP 2026 07:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -807,11 +807,11 @@ L3 programming layer <2026-01-19>
 Here is how much of TeX's memory you used:
  19379 strings out of 469515
  409014 string characters out of 5469684
- 960053 words of memory out of 5000000
+ 961100 words of memory out of 5000000
  47707 multiletter control sequences out of 15000+600000
  658992 words of font info for 67 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,11n,104p,706b,727s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,11n,104p,604b,727s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/msys64/ucrt64/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/msys6
 4/ucrt64/share/texmf-dist/fonts/type1/public/lm/lmbx7.pfb><c:/msys64/ucrt64/sha
 re/texmf-dist/fonts/type1/public/lm/lmbx8.pfb><c:/msys64/ucrt64/share/texmf-dis
@@ -828,7 +828,7 @@ b><c:/msys64/ucrt64/share/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/msys64
 e/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/msys64/ucrt64/share/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/msys64/ucrt64/share/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on compalg_final_cheatsheet.pdf (2 pages, 271407 bytes).
+Output written on compalg_final_cheatsheet.pdf (2 pages, 271461 bytes).
 PDF statistics:
  108 PDF objects out of 1000 (max. 8388607)
  67 compressed objects within 1 object stream
