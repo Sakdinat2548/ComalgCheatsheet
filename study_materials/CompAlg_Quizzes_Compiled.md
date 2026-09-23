@@ -117,7 +117,58 @@ Power-based cipher: $c \equiv m^b \pmod p$; decryption $m \equiv c^d \pmod p$, w
 
 ---
 
-## Quiz 6: Two Representations of Polynomials
+## Quiz 6: Complex Numbers and Finite Groups
+
+**Source:** quiz06(1).pdf (Computer Algebra) — Time: 35 minutes, Score: up to 14 points. An equivalent Thai-language version of the quiz is included in the same file.
+
+**Content Type: Core Formula**
+**Content Text:**
+Standard sine and cosine values:
+$$\begin{array}{c|ccccccccc} \theta & 0 & \frac{\pi}{6} & \frac{\pi}{4} & \frac{\pi}{3} & \frac{\pi}{2} & \frac{2\pi}{3} & \frac{3\pi}{4} & \frac{5\pi}{6} & \pi \\ \hline \sin \theta & 0 & \frac{1}{2} & \frac{\sqrt{2}}{2} & \frac{\sqrt{3}}{2} & 1 & \frac{\sqrt{3}}{2} & \frac{\sqrt{2}}{2} & \frac{1}{2} & 0 \\ \cos \theta & 1 & \frac{\sqrt{3}}{2} & \frac{\sqrt{2}}{2} & \frac{1}{2} & 0 & -\frac{1}{2} & -\frac{\sqrt{2}}{2} & -\frac{\sqrt{3}}{2} & -1 \end{array}$$
+
+Trigonometric identities:
+$$\sin (x + 2\pi k) = \sin x,\qquad \cos (x + 2\pi k) = \cos x,\qquad k\in \mathbb{Z},$$
+$$\sin (-x) = -\sin (x),\qquad \cos (-x) = \cos (x).$$
+
+Set:
+$$C_3 = \left\{ 1, -\frac{1+\sqrt{3}i}{2}, -\frac{1-\sqrt{3}i}{2} \right\}.$$
+
+**Content Type: Worked Example/Proof**
+**Content Text:**
+1. For the complex numbers
+$$z_{1} = 1 + i,\qquad z_{2} = 2 - 3i,$$
+find:
+(a) (0.5 points) $z_{1} + z_{2}$ and $z_{1} - z_{2}$
+(b) (0.5 points) $z_{1}z_{2}$
+(c) (0.5 points) $\overline{z_{1}}\overline{z_{2}}$
+(d) (0.5 points) $\left|z_{1}\right|\cdot \left|z_{2}\right|$
+(e) (1 point) $\frac{z_{1}}{z_{2}}$
+
+2. Consider the complex numbers
+$$z_{1} = i,\qquad z_{2} = 3 + 2i,\qquad z_{3} = -5 - i.$$
+(a) (0.5 points) Plot $z_{1},z_{2}$ and $z_{3}$ as vectors on the complex plane $(\mathrm{Re},\mathrm{Im})$
+(b) (1 point) Find the sum $z_{1} + z_{2} + z_{3}$ graphically.
+
+3. Consider the following complex numbers in polar form:
+$$z_{1} = \frac{1}{2} e^{\frac{\pi}{4} i},\qquad z_{2} = 3e^{\frac{3\pi}{4} i}.$$
+(a) (0.5 points) Find the product $w = z_{1}z_{2}$ in polar form.
+(b) (1 point) Plot the vectors corresponding to $z_{1},z_{2}$ and $w$ on the complex plane $(\mathrm{Re},\mathrm{Im})$
+
+4. Consider the complex number in polar form
+$$z = 2e^{\frac{\pi}{3} i}.$$
+(a) (1 point) Using Euler's formula, express $z$ in standard (rectangular) form.
+(b) (1 point) Using de Moivre's formula, find $z^{3}$ and express the result in standard (rectangular) form.
+(c) (2 points) Using de Moivre's formula, find all square roots of $z$
+
+5. Consider the following set:
+$$C_3 = \left\{ 1, -\frac{1+\sqrt{3}i}{2}, -\frac{1-\sqrt{3}i}{2} \right\}$$
+(a) (2 points) Construct the multiplication table for the elements of $\mathbb{C}_{3}$ and verify that the set is closed under multiplication.
+(b) (1 point) For the multiplicative group $\mathbb{C}_{3}^{*} = (\mathbb{C}_{3},*)$ , identify an isomorphic group $A$ arising from modular arithmetic.
+(c) (1 point) Identify the generators of the groups $\mathbb{C}_{3}^{*}$ and $A$
+
+---
+
+## Quiz 7: Two Representations of Polynomials
 
 **Source:** quiz07-1.pdf (Computer Algebra) — Time: 35 minutes, Score: up to 14 points. An equivalent Thai-language version of the quiz is included in the same file.
 
