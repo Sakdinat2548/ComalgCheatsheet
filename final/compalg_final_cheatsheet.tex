@@ -48,7 +48,7 @@
 
 \AddToShipoutPicture*{%
 \AtTextUpperLeft{%
-\raisebox{6pt}{\makebox[\textwidth][r]{\scriptsize\textcolor{black!60}{Updated: 23 Sep 2026 19:39}}}%
+\raisebox{6pt}{\makebox[\textwidth][r]{\normalfont\scriptsize\textcolor{black!60}{Updated: 24 Sep 2026 00:21}}}%
 }%
 }
 \begin{center}
@@ -99,6 +99,7 @@ Y \wk{Step 3:} $16{\cdot}({-}5){=}{-}80$; ${-}80{+}3{\cdot}29{=}{-}80{+}87{=}7\R
 \begin{sloppypar}\raggedright
 Rect $z{=}a{+}bi$ (Re${=}a$, Im${=}b$), plane vector $(a,b)$. Polar $r(\cos\theta{+}i\sin\theta)$, $r{=}|z|{=}\sqrt{a^2{+}b^2}$. $|z|^2{=}z\bar z$, $\bar z{=}a{-}bi$.\\
 $+,-$ = vector $+$ (parallelogram). Mult: $(a{+}bi)(c{+}di){=}(ac{-}bd){+}(ad{+}bc)i$.\\
+\ex{Worked mult:} $(1{+}i)(2{-}3i){=}(2{+}3){+}(2{-}3)i{=}5{-}i$. \hl{Conj rule:} $\overline{z_1z_2}{=}\bar z_1\bar z_2$: $(1{-}i)(2{+}3i){=}5{+}i{=}\overline{5{-}i}$.\\
 \ex{Worked $3{+}4i$:} $|z|{=}5$, $z^{-1}{=}(3{-}4i)/25{=}0.12{-}0.16i$.\\
 \ex{Worked $(1{+}6i)/(1{-}6i)$:} $(1{+}6i)^2/37{=}({-}35{+}12i)/37$.\\
 ${\approx}{-}0.9459{+}0.3243i$ \wk{Check} ($37{\cdot}({-}0.9459){=}{-}35$, $37{\cdot}0.3243{=}12$).\\
@@ -109,6 +110,12 @@ ${\approx}{-}0.9459{+}0.3243i$ \wk{Check} ($37{\cdot}({-}0.9459){=}{-}35$, $37{\
 \textbf{Div:} \hl{$z_1/z_2{=}z_1\bar z_2/|z_2|^2$}; \textbf{Inverse:} \hl{$z^{-1}{=}\bar z/|z|^2$}.\\
 \textbf{Polar mult:} \hl{$r_1r_2e^{i(\theta_1+\theta_2)}$}: $e^{i\pi/3}{\cdot}e^{i\pi/6}{=}e^{i\pi/2}{=}i$.
 \end{kbox}
+\begin{center}\scriptsize
+${\renewcommand{\arraystretch}{0.9}\begin{array}{c|ccccccc}\theta&\frac\pi6&\frac\pi4&\frac\pi3&\frac\pi2&\frac{2\pi}3&\frac{3\pi}4&\frac{5\pi}6\\\hline\sin&\frac12&\frac{\sqrt2}2&\frac{\sqrt3}2&1&\frac{\sqrt3}2&\frac{\sqrt2}2&\frac12\\\cos&\frac{\sqrt3}2&\frac{\sqrt2}2&\frac12&0&{-}\frac12&{-}\frac{\sqrt2}2&{-}\frac{\sqrt3}2\end{array}}$
+\end{center}
+\begin{sloppypar}\raggedright
+\hl{Periodicity:} $\sin(\theta{+}2\pi k){=}\sin\theta$, $\cos$ same; $\sin({-}\theta){=}{-}\sin\theta$, $\cos({-}\theta){=}\cos\theta$. \ex{Use (Quiz6 roots):} $\sqrt{2}\,e^{i\pi/6}{=}\sqrt2\left(\tfrac{\sqrt3}2{+}\tfrac i2\right){=}\tfrac{\sqrt3}{\sqrt2}{+}\tfrac{i}{\sqrt2}$.
+\end{sloppypar}
 \begin{sloppypar}\raggedright
 \ex{Worked $8e^{i\pi/3}$:} $8(\frac12{+}i\frac{\sqrt3}{2}){=}4{+}4\sqrt3\,i{\approx}4{+}6.9282i$.\\
 \ex{Worked $11e^{3\pi i/2}$:} $11(0{-}i){=}{-}11i$.\\
@@ -137,7 +144,8 @@ Powers $\omega^0..\omega^{n-1}$ = all $n$ roots cyclically (regular $n$-gon on u
 \ex{Worked} $p{=}x^4{-}3x^3{+}x^2{-}2x{-}1$ at $\omega_4{=}i$: powers $\omega_4^2{=}{-}1$, $\omega_4^3{=}{-}i$, $\omega_4^4{=}1$.\\
 Then $1{-}3({-}i){+}({-}1){-}2i{-}1{=}1{+}3i{-}1{-}2i{-}1{=}{-}1{+}i$.\\
 Lecture: $3\omega_4^3{-}2\omega_4^2{+}2{+}\omega_4^8{=}3({-}i){+}2{+}2{+}1{=}5{-}3i$.\\
-\ex{Power drill:} $[(\omega_8^3)^4{-}1]$: $\omega_8^{12}{=}\omega_8^4{=}{-}1$, so ${-}1{-}1{=}{-}2$.
+\ex{Power drill:} $[(\omega_8^3)^4{-}1]$: $\omega_8^{12}{=}\omega_8^4{=}{-}1$, so ${-}1{-}1{=}{-}2$.\\
+\ex{C3 (Quiz6):} $\omega_3{=}\frac{-1{+}\sqrt3 i}{2}{=}e^{2\pi i/3}$, $\omega_3^2{=}\frac{-1{-}\sqrt3 i}{2}$, $\omega_3^3{=}1$; table via powers: $\omega_3^2{\cdot}\omega_3^2{=}\omega_3^4{=}\omega_3$; gens $\omega_3,\omega_3^2{\leftrightarrow}[1]_3,[2]_3$ ($\gcd{=}1$).
 \end{sloppypar}
 
 \section{Iso $C_n^*\cong\mathbb Z_n^+$}
@@ -246,6 +254,7 @@ Gen $a_2$ formula ($n{=}4$): $a_2{=}(y_0{-}y_1{+}y_2{-}y_3)/4$ ($\omega^{-2k}{=}
 \ex{$C_8^*$ products} ($z_1{=}1$, $z_2{=}{-}1$, $z_5{=}(1{+}i)/\sqrt2$, $z_6{=}({-}1{+}i)/\sqrt2$, $z_7{=}(1{-}i)/\sqrt2$, $z_8{=}({-}1{-}i)/\sqrt2$):\\
 $z_2z_5{=}({-}1{-}i)/\sqrt2{=}z_8$; $z_5z_7{=}1{=}z_1$; $z_6z_8{=}1{=}z_1$. Inverse of $({-}1{-}i)/\sqrt2$: $|z|^2{=}1$, inv ${=}\bar z{=}({-}1{+}i)/\sqrt2{=}z_6$.\\
 \ex{Group tests:} $2a{+}7bi$ ($a,b{\in}\mathbb Z$) additive: closed, $e{=}0$, inv ${-}z$ $\Rightarrow$ \hl{group}. $3a{+}3bi$, $ab{\ne}0$ multiplicative: $1{=}3a{+}3bi\Rightarrow a{=}1/3{\notin}\mathbb Z$ $\Rightarrow$ \hl{not} (no identity).\\
+\ex{D3 triangle symmetries (HW09):} $\{e,r,r^2,\ell_1,\ell_2,\ell_3\}$, $r$ = rot $120^{\circ}$, $\ell_i$ = reflections; $r^3{=}e$, $\ell_i^2{=}e$; rot${\cdot}$rot = rot, refl${\cdot}$refl = rot, mixed = refl (track one vertex to name it: $r^2{\cdot}\ell_1{=}\ell_2$, $r{\cdot}\ell_1{=}\ell_3$); order 6, non-abelian ($r\ell_1{\ne}\ell_1r$); $r^{-1}{=}r^2$, each $\ell_i$ self-inverse. ($b{\cdot}a$: apply $a$ first.)\\
 \ex{FFT $n{=}32$:} depth $5$ ($2^5{=}32$); butterfly pairs $(\omega^0,\omega^{16})$, $(\omega^1,\omega^{17})$; even/odd parts deg $15$, split again $\to4$ polys ($p_{ee},p_{eo},p_{oe},p_{oo}$). $C_n^+$ = cyclic additive order $n$ (${\cong}\mathbb Z_n^+$), gens $[k]$ with $\gcd(k,n){=}1$; chain $C_{2^m}^*{\subset}C_{2^{m+1}}^*$.
 \end{sloppypar}
 $\begin{array}{l}

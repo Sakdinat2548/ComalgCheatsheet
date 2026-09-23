@@ -4,7 +4,7 @@
 COURSE: Computer Algebra (SCI19 3112)
 YEAR/SEMESTER: 2026
 FILE NAME: /midterm/compalg_cheatsheet.tex, /final/compalg_final_cheatsheet.tex
-STATUS: both sheets at 2 pages, zero warnings; all numbers verified by computation (90-check script for final)
+STATUS: both sheets at 2 pages, zero warnings; all numbers verified by computation and cross-checked against official quiz answers (Quizzes 5-8, in /study_materials)
 SUPPLIED SOURCES: .md or .txt in '/study_materials' folder; quizzes, homeworks, and any professor notes. '/examples' folder has a reference cheatsheet for formatting and layout.
 OFFICIAL ANSWERS AVAILABLE?: in '/study_materials' 
 
@@ -26,6 +26,10 @@ OFFICIAL ANSWERS AVAILABLE?: in '/study_materials'
 - FFT: needs n = power of 2 (zero-pad otherwise); N_FFT = smallest power of 2 ≥ 2n−1; product of deg-n, deg-m needs n+m+1 points
 - polynomial GCD is monic (leading coefficient 1); overdetermined system: deg(gcd)=0 ⟹ inconsistent, deg≥1 ⟹ common roots = roots of gcd
 - Lagrange-consequence claims: check "for all a" carefully (e.g. in Z_24*, [5]^2=[1] so every even x works; only odd x never gives [a]^x=[1])
+- quiz answer-extraction can mangle notation: Quiz6 Q1(c) "z1z2 = 5+i" is actually conj(z1*z2) = conj(z1)*conj(z2) (overline spans the whole product) — recompute before trusting
+- quizzes hand you a sin/cos standard-values table; the final may not — keep a compact one on the sheet
+- quiz6 C3 = {1, (-1±sqrt3 i)/2}: recognize (−1+sqrt3 i)/2 = omega_3 = e^{2pii/3}; table/gens follow the same iso recipe as C4/C5
+- D3 (HW09 triangle symmetries): only HW problem type with no quiz analog — compact fill-recipe on sheet (rot*rot=rot, refl*refl=rot, mixed=refl, r^3=l^2=e, track one vertex)
 - lecture-notes typos exist: verify every worked number by computation; official/prof answer wins, but flag discrepancies on the sheet (e.g. [2,15,7] carries to 852, not 825)
 
 ## Role
