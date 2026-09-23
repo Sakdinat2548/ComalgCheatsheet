@@ -9,7 +9,7 @@
 3. (2 points) Convert the decimal number $0.19_{10}$ to binary, assuming that 8 bits are used for the fractional part (mantissa).
 4. (2 points) Convert the binary number $0.1011011_2$ to decimal.
 5. (1 point) Express the binary number $-10100.0011101_2$ in the normalized form $(-1)^s(1.f)_2 \cdot 2^e$.
-6. (1 point) Given the number in the normalized IEEE 754-like form $(s,f,e) = (0, 11011011, -3)$, express it in standard binary form (i.e., in the form $d_1d_2\cdots d_n.d_{n+1}d_{n+2}\cdots$, each $d_i \in \{0,1\}$; e.g., $101.01101_2$).
+6. (1 point) Given the number in the normalized IEEE 754-like form $(s,f,e) = (0, 11011011, -3)$, express it in standard binary form (i.e., in the form $d_1d_2\cdots d_n.d_{n+1}d_{n+2}\cdots$, each $d_i \in \lbrace 0,1 \rbrace$; e.g., $101.01101_2$).
 7. (2 points) Assuming a 5-bit two's complement representation, determine which negative integer (decimal!) is represented by $10010_2$.
 
 ---
@@ -152,7 +152,8 @@ $$\sin(-x)=-\sin(x), \quad \cos(-x)=\cos(x).$$
 (a) (1 point) Using Euler's formula, express $z$ in standard (rectangular) form.
 (b) (1 point) Using de Moivre's formula, find $z^3$ and express the result in standard (rectangular) form.
 (c) (2 points) Using de Moivre's formula, find all square roots of $z$.
-5. Consider the following set: $$C_3 = \left\{1,\ \frac{-1+\sqrt{3}\,i}{2},\ \frac{-1-\sqrt{3}\,i}{2}\right\}.$$
+5. Consider the following set:
+$$C_3 = \left\lbrace 1,\ \frac{-1+\sqrt{3}\ i}{2},\ \frac{-1-\sqrt{3}\ i}{2} \right\rbrace.$$
 (a) (2 points) Construct the multiplication table for the elements of $C_3$ and verify that the set is closed under multiplication.
 (b) (1 point) For the multiplicative group $C_3^* = (C_3, *)$, identify an isomorphic group $A$ arising from modular arithmetic.
 (c) (1 point) Identify the generators of the groups $C_3^*$ and $A$.
@@ -167,7 +168,7 @@ $$\sin(-x)=-\sin(x), \quad \cos(-x)=\cos(x).$$
 **Content Text:**
 Properties of complex roots of unity:
 $$\omega_n = e^{2\pi i/n}, \quad \omega_n^{k+n/2} = -\omega_n^k, \quad \omega_n^{2k} = \omega_{n/2}^k, \quad \omega_n^{n-k} = \omega_n^{-k}, \quad \omega_n^{-k} = (\omega_n^k)^{-1} = \overline{\omega_n^k},$$
-where $k \in \mathbb{N}\cup\{0\}$. In particular, for $k=0$: $\omega_n^{n/2}=-1$, $\omega_n^2=\omega_{n/2}$, $\omega_n^n=1$, $\omega_n^{-1}=\overline{\omega_n}$.
+where $k \in \mathbb{N}\cup\lbrace 0\rbrace$. In particular, for $k=0$: $\omega_n^{n/2}=-1$, $\omega_n^2=\omega_{n/2}$, $\omega_n^n=1$, $\omega_n^{-1}=\overline{\omega_n}$.
 
 **Content Type: Worked Example/Proof**
 **Content Text:**
@@ -189,7 +190,7 @@ where $k \in \mathbb{N}\cup\{0\}$. In particular, for $k=0$: $\omega_n^{n/2}=-1$
 **Content Type: Core Formula**
 **Content Text:**
 Butterfly formula:
-$$p(\omega_n^k) = p_{\text{even}}(\omega_n^{2k}) + \omega_n^k\,p_{\text{odd}}(\omega_n^{2k}), \qquad p(\omega_n^{k+n/2}) = p_{\text{even}}(\omega_n^{2k}) - \omega_n^k\,p_{\text{odd}}(\omega_n^{2k}), \qquad k=0,\ldots,\frac{n}{2}-1.$$
+$$p(\omega_n^k) = p_{\text{even}}(\omega_n^{2k}) + \omega_n^k\thinspace p_{\text{odd}}(\omega_n^{2k}), \qquad p(\omega_n^{k+n/2}) = p_{\text{even}}(\omega_n^{2k}) - \omega_n^k\thinspace p_{\text{odd}}(\omega_n^{2k}), \qquad k=0,\ldots,\frac{n}{2}-1.$$
 Inverse FFT:
 $$a_j = \frac{1}{n}\sum_{k=0}^{n-1} y_k(\omega_n^{-j})^k, \qquad j=0,\ldots,n-1.$$
 Useful properties of complex roots of unity (n even): $\omega_n^n=1$, $\omega_n^{n/2}=-1$, $\omega_n^2=\omega_{n/2}$, $\omega_n^{-1}=\overline{\omega_n}$, $\omega_n^{-k}=\omega_n^{n-k}=(\omega_n^k)^{-1}$.
