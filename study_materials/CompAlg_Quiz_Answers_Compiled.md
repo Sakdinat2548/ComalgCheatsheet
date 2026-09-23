@@ -4,10 +4,10 @@
 
 **Content Type: Worked Example/Proof**
 **Content Text:**
-1. (a) (0.5 points) $\varphi(16) = \#\lbrace 1, 3, 5, 7, 9, 11, 13, 15\rbrace = 8$.
+1. (a) (0.5 points) $\varphi(16) = \lvert \lbrace 1, 3, 5, 7, 9, 11, 13, 15 \rbrace \rvert = 8$.
 (b) (0.5 points) $\varphi(17) = 17 - 1 = 16$.
 2. (3 points)
-$$\varphi(14) = \#\lbrace 1, 3, 5, 9, 11, 13\rbrace = 6.$$
+$$\varphi(14) = \lvert \lbrace 1, 3, 5, 9, 11, 13 \rbrace \rvert = 6.$$
 $$[3^{347}]_{14} = [3^{57\cdot 6 + 5}]_{14} = [3]_{14}^5 = [5]_{14}.$$
 3. (a) (1 point) The Caesar cipher: $(21, 18)$ or $(\text{V}, \text{S})$.
 (b) (2 points)
