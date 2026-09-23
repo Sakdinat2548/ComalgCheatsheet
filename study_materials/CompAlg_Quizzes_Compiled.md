@@ -1,4 +1,3 @@
-```markdown
 ## Quiz 1: Computer Representation of Numbers
 
 **Source:** quiz01-3.pdf (Computer Algebra) — Time: 30 minutes, Score: up to 12 points.
@@ -166,4 +165,3 @@ Useful properties of complex roots of unity (n even): $\omega_n^n=1$, $\omega_n^
 3. (4 points) Represent the polynomial $q(x) = 1 - x^2 + 4x^3$ in value form using the FFT.
 4. (4 points) Given the values of a polynomial at the 4th roots of unity, $y_0=-1$, $y_1=i$, $y_2=1$, $y_3=2$, recover the first three coefficients $(a_0, a_1, a_2)$ of the polynomial using the IFFT.
 5. (2 extra points) Recover the coefficient $a_3$ of the polynomial from the previous problem and write the polynomial in coefficient representation.
-```

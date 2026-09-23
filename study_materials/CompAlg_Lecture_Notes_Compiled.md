@@ -1,4 +1,3 @@
-```markdown
 ## Lecture 1: Introduction to Computer Algebra
 
 **Source:** CompAlg_-_all.pdf, Lecture 1
@@ -598,4 +597,3 @@ Property of the GCD: Let $h=\gcd(f,g)$, $f,g\in\mathbb{C}[x]$ nonzero. If $\deg 
 **Content Type: Definition**
 **Content Text:**
 For a two-variable system $f(x,y)=0,\ g(x,y)=0$, the resultant is a construction based on a special determinant providing an algebraic condition for two polynomials to have a common root; it can be used to eliminate one variable in multi-variable systems.
-```
