@@ -6,7 +6,7 @@ YEAR/SEMESTER: 2026
 FILE NAME: /midterm/compalg_cheatsheet.tex, /final/compalg_final_cheatsheet.tex
 STATUS: both sheets at 2 pages, zero warnings; all numbers verified by computation (90-check script for final)
 SUPPLIED SOURCES: .md or .txt in '/study_materials' folder; quizzes, homeworks, and any professor notes. '/examples' folder has a reference cheatsheet for formatting and layout.
-OFFICIAL ANSWERS AVAILABLE?: not yet 
+OFFICIAL ANSWERS AVAILABLE?: in '/study_materials' 
 
 ## COURSE-SPECIFIC TRAPS TO LOOK FOR (maintain during the session)
 - two's complement: signed n-bit range = -2^(n-1) .. 2^(n-1)-1 (one extra negative); negate = flip bits + 1; -2^(n-1) has no positive counterpart
